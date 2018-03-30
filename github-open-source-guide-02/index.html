@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta name="google-site-verification" content="A10gB5knD13kj0AnV_W44ZQAWP0Qy4ECwlgdlighbTI" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5.1.4">
+
+
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="github," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是开源，为什么要开源 那么你正准备拥抱开源吗？恭喜你，开源世界欣赏你的贡献。接下来让我们聊聊什么是开源，我们为什么要开源。 “开源”意味着什么？当一个项目开源后，意味着 不论什么目的，所有人都可以浏览，使用，修改和分发你的项目。 这些权限都是来自于开源协议. 开源非常的强大。因为它降低了使用的门槛，使新奇的思想得到快速的传播。 来理解它如何工作，想象下你的朋友正在吃便当，这时你带来了樱桃派。">
+<meta name="keywords" content="github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github开源项目贡献指南-创建一个开源项目[译文]">
+<meta property="og:url" content="http://liadbiz.github.io/github-open-source-guide-02/index.html">
+<meta property="og:site_name" content="liadbiz&#39;s blog">
+<meta property="og:description" content="什么是开源，为什么要开源 那么你正准备拥抱开源吗？恭喜你，开源世界欣赏你的贡献。接下来让我们聊聊什么是开源，我们为什么要开源。 “开源”意味着什么？当一个项目开源后，意味着 不论什么目的，所有人都可以浏览，使用，修改和分发你的项目。 这些权限都是来自于开源协议. 开源非常的强大。因为它降低了使用的门槛，使新奇的思想得到快速的传播。 来理解它如何工作，想象下你的朋友正在吃便当，这时你带来了樱桃派。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/1500684?v=3&s=460">
+<meta property="og:image" content="https://avatars2.githubusercontent.com/u/3520168?v=3&s=460">
+<meta property="og:image" content="https://avatars2.githubusercontent.com/u/1857993?v=3&s=460">
+<meta property="og:image" content="https://github.com/cnbo/open-source-guide/blob/gh-pages/assets/images/starting-a-project/repository-license-picker.png">
+<meta property="og:image" content="https://avatars0.githubusercontent.com/u/168572?v=3&s=460">
+<meta property="og:image" content="https://github.com/cnbo/open-source-guide/blob/gh-pages/assets/images/starting-a-project/Contributing-guidelines.jpg">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/11214?v=3&s=460">
+<meta property="og:image" content="https://avatars0.githubusercontent.com/u/11321?v=3&s=460">
+<meta property="og:updated_time" content="2018-03-30T05:31:23.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github开源项目贡献指南-创建一个开源项目[译文]">
+<meta name="twitter:description" content="什么是开源，为什么要开源 那么你正准备拥抱开源吗？恭喜你，开源世界欣赏你的贡献。接下来让我们聊聊什么是开源，我们为什么要开源。 “开源”意味着什么？当一个项目开源后，意味着 不论什么目的，所有人都可以浏览，使用，修改和分发你的项目。 这些权限都是来自于开源协议. 开源非常的强大。因为它降低了使用的门槛，使新奇的思想得到快速的传播。 来理解它如何工作，想象下你的朋友正在吃便当，这时你带来了樱桃派。">
+<meta name="twitter:image" content="https://avatars1.githubusercontent.com/u/1500684?v=3&s=460">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liadbiz.github.io/github-open-source-guide-02/"/>
+
+
+
+
+
+  <title>Github开源项目贡献指南-创建一个开源项目[译文] | liadbiz's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">liadbiz's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Explain better</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liadbiz.github.io/github-open-source-guide-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liadbiz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/monkey_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liadbiz's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Github开源项目贡献指南-创建一个开源项目[译文]</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T22:44:02+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/github-open-source-guide-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/github-open-source-guide-02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/github-open-source-guide-02/" class="leancloud_visitors" data-flag-title="Github开源项目贡献指南-创建一个开源项目[译文]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是开源，为什么要开源"><a href="#什么是开源，为什么要开源" class="headerlink" title="什么是开源，为什么要开源"></a>什么是开源，为什么要开源</h2><p> 那么你正准备拥抱开源吗？恭喜你，开源世界欣赏你的贡献。接下来让我们聊聊什么是开源，我们为什么要开源。</p>
+<h3 id="“开源”意味着什么？"><a href="#“开源”意味着什么？" class="headerlink" title="“开源”意味着什么？"></a>“开源”意味着什么？</h3><p>当一个项目开源后，意味着 <strong>不论什么目的，所有人都可以浏览，使用，修改和分发你的项目。</strong> 这些权限都是来自于<a href="https://opensource.org/licenses" target="_blank" rel="noopener">开源协议</a>.</p>
+<p>开源非常的强大。因为它降低了使用的门槛，使新奇的思想得到快速的传播。</p>
+<p>来理解它如何工作，想象下你的朋友正在吃便当，这时你带来了樱桃派。</p>
+<ul>
+<li>每个人都会想要樱桃派（使用）</li>
+<li>这个派引起了一场轰动！周围的人会想知道你的烹饪方法（浏览）</li>
+<li>有一位朋友Alex是一名糕点师，他会建议少放一点糖（修改）</li>
+<li>另外一位朋友Lisa要求使用它作为下个星期的晚餐（分发）</li>
+</ul>
+<p>同样的，闭源就像是你去餐厅必须付钱才能吃樱桃派。但是，餐厅不会告诉你樱桃派的烹饪方法。如果你恰好抄袭了他们的派，并以你自己的名义出售，那么餐厅将会采取行动抵制你。</p>
+<h3 id="人们为什么要将他们的工作开源？"><a href="#人们为什么要将他们的工作开源？" class="headerlink" title="人们为什么要将他们的工作开源？"></a>人们为什么要将他们的工作开源？</h3><aside markdown="1" class="pquote"><br>  <img src="https://avatars1.githubusercontent.com/u/1500684?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  我从开源使用和协作中获得的最有价值的经验之一来自我与其他面临许多相同问题的开发者建立的关系。<br><br><br>  <p markdown="1" class="pquote-credit"><br>— @kentcdodds, <a href="https://medium.com/@kentcdodds/how-getting-into-open-source-has-been-awesome-for-me-8480cd756a80#.pjt9oqp4w" target="_blank" rel="noopener"> “How getting into Open Source has been awesome for me”</a><br>  </p><br></aside>
+
+<p><a href="http://ben.balter.com/2015/11/23/why-open-source/" target="_blank" rel="noopener">这里列举了很多理由</a> 来解释为什么个人或者组织想要开源自己的项目。下面列举了部分：</p>
+<ul>
+<li><p><strong>协作:</strong> 开源项目欢迎所有人参与。例如， <a href="https://github.com/exercism/" target="_blank" rel="noopener">Exercism</a>是一个有超过350人协作开发的练习编程的平台。</p>
+</li>
+<li><p><strong>采用和重新混合:</strong><br>任何人可以出于几乎任何目的使用开源项目。人们甚至可以将开源项目用于构建其他的项目。例如， <a href="https://github.com/WordPress" target="_blank" rel="noopener">WordPress</a>是基于开源项目 <a href="https://github.com/WordPress/book/blob/master/Content/Part%201/2-b2-cafelog.md" target="_blank" rel="noopener">b2</a>构建的。</p>
+</li>
+<li><p><strong>透明度:</strong> 所有人都可以检查开源项目中存在的问题。透明度对于政府（如 <a href="https://medium.com/@bozhobg/bulgaria-got-a-law-requiring-open-source-98bf626cf70a" target="_blank" rel="noopener">保加利亚</a> 或者 <a href="https://sourcecode.cio.gov/" target="_blank" rel="noopener">美国</a>）, 产业调整（如银行业或者医疗健康行业）, 和软件安全（如 <a href="https://github.com/letsencrypt" target="_blank" rel="noopener">Let’s Encrypt</a>）。</p>
+<p>不仅仅是可以开源软件，你可以开源一切，从数据集到书籍。通过浏览 <a href="https://github.com/explore" target="_blank" rel="noopener">GitHub Explore</a> 你可以知道什么东西可以被开源。</p>
+</li>
+</ul>
+<h3 id="开源是否意味着免费"><a href="#开源是否意味着免费" class="headerlink" title="开源是否意味着免费?"></a>开源是否意味着免费?</h3><p>开源最吸引之处就是它不用花钱。然而免费只是开源的价值的一个副产品。</p>
+<p>因为 <a href="https://opensource.org/osd-annotated" target="_blank" rel="noopener">开源协议要求</a>开源项目可以被任何人出于几乎任何目的使用，修改和分享，这些项目一般都是免费的。如果有些开源项目需要付费使用，任何人都可以合法地使用其免费版。</p>
+<p>结果是大多数开源项目都是免费的。但免费并不属于开源定义的一部分。开源项目可以通过双重许可协议或者其它的方法进行间接收费，同时不违背开源的官方定义。</p>
+<h2 id="我应该发起属于自己的开源项目吗"><a href="#我应该发起属于自己的开源项目吗" class="headerlink" title="我应该发起属于自己的开源项目吗?"></a>我应该发起属于自己的开源项目吗?</h2><p>答案是肯定的，因为不论结果是什么，发起一个属于自己的开源项目是学习开源最好的方法。</p>
+<p>如果你还没有开源过一个项目，你可能会因为没有人关注或者别人的说辞而紧张。如果真是这样的话，你并不孤独！</p>
+<p>开源与其他有创意的活动是一样的，无论是写作还是画画。你可能会害怕向世界分享你的工作，但练习是唯一让你变得更好的方法，即使你没有一位听众。</p>
+<p>如果你不确信，那么请花一点时间想想你的目标可能是什么。</p>
+<h3 id="设定你的目标"><a href="#设定你的目标" class="headerlink" title="设定你的目标"></a>设定你的目标</h3><p>目标可以帮助你知道该做什么，不因该说什么和需要从他人那里获得哪些帮助。请开始问自己，<em>我为什么要开源这个项目？</em></p>
+<p>这个问题没有一个正确的答案。你可能为一个简单的项目设定了多个目标，或者不同的项目有不同的目标。</p>
+<p>如果你唯一的目的是炫耀你的工作，你可能甚至不想将它贡献出去，甚至不会在README中说明。另一方面，如果你想贡献自己的项目，你将会花更多的时间在书写简洁明了的文档上，使新来的参与者感到欢迎。</p>
+<aside markdown="1" class="pquote"><br>  <img src="https://avatars2.githubusercontent.com/u/3520168?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  在某一时刻，我创建了一个自定义的UIAlertView，并且决定开源。因此我对进行了一些修改使其更加动态灵活，同时上传到GitHub。我编写了一份技术文档以便其他开发者将UIAlertView用于他们的项目中。或许没有人使用这个项目，因为这是一个简单的项目。但是我为自己的贡献感到开心。<br><br>  <p markdown="1" class="pquote-credit"><br>— @mavris, <a href="https://medium.com/rocknnull/self-taught-software-engineers-why-open-source-is-important-to-us-fe2a3473a576#.zhwo5krlq" target="_blank" rel="noopener">“Self-taught Software Developers: Why Open Source is important to us”</a><br>  </p><br></aside>
+
+<p>随着你的项目的发展，你的社区可能不仅需要你提供的代码。回复issues，审查代码和传播你的项目在一个开源项目中都是非常重要的任务。</p>
+<p>虽然你花费在非编码上的时间取决于项目的规模和范围，但你应准备好作为维护者来自己解决问题或者向他人寻求帮助。</p>
+<p><strong>如果你参与了公司的开源项目，</strong> 确保你的项目拥有它所需要的内部资源。当项目启动后，你会想知道由谁负责维护和在你的社区如何分享这些任务。</p>
+<p>如果你需要为项目的宣传，操作和维护准备一笔专用预算或者人员配置，那么尽早开始讨论。</p>
+<aside markdown="1" class="pquote"><br>  <img src="https://avatars2.githubusercontent.com/u/1857993?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  一旦你开源项目后，最重要的是你要考虑到项目周围社区的贡献和能力。你不必担心一些不是你公司的贡献者参与到项目的关键部分。<br>  <p markdown="1" class="pquote-credit"><br>— @captainsafia, <a href="https://writing.safia.rocks/2016/12/06/so-you-wanna-open-source-a-project-eh/" target="_blank" rel="noopener"> “So you wanna open source a project, eh?”</a><br>  </p><br></aside>
+
+<h3 id="为其他的项目做贡"><a href="#为其他的项目做贡" class="headerlink" title="为其他的项目做贡"></a>为其他的项目做贡</h3><p>如果你的目标是想学习如何与他人一起协作或者了解开源是如何工作的，那么你可以考虑为一个已存在的项目做贡献。开始参与你曾经使用过和喜爱的项目。为项目做贡献就像修改错别字或者更新文档一样简单。</p>
+<p>如果你不知道如何开始做一个贡献者，那么可以阅读我们的<a href="https://liadbiz.github.io/">Github开源项目贡献指南</a>。</p>
+<h2 id="发起属于你的开源项目"><a href="#发起属于你的开源项目" class="headerlink" title="发起属于你的开源项目"></a>发起属于你的开源项目</h2><p>如果没有充足的时间来开源你的工作，你可以开发一个想法，一个正在进行的工作或者多年后将被关闭的资源。</p>
+<p>一般来说，当你发现有人对你的工作反馈了一些有建设性的观点后，你应该开源你的项目。</p>
+<p>无论你决定开源你项目的哪个阶段，每个项目都应该包含这些文档：</p>
+<ul>
+<li><a href="https://help.github.com/articles/open-source-licensing/#where-does-the-license-live-on-my-repository" target="_blank" rel="noopener">opensource license</a></li>
+<li><a href="https://help.github.com/articles/create-a-repo/#commit-your-first-change" target="_blank" rel="noopener">README</a></li>
+<li><a href="https://help.github.com/articles/setting-guidelines-for-repository-contributors/" target="_blank" rel="noopener">opensource guidelines</a></li>
+<li><a href="https://github.com/cnbo/open-source-guide/blob/gh-pages/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">code of conduct</a></li>
+</ul>
+<p>作为一名维护者，这些组合将会有助于你表达想法，管理贡献和保护每个人的合法权益（包括你自己的）。他们大大增加了你获得积极经验的机会。</p>
+<p>如果你的项目在GitHub上，将这些文件按上面推荐的命名方式放在你的根目录，这样对你的读者会一目了然。</p>
+<h3 id="选择协议"><a href="#选择协议" class="headerlink" title="选择协议"></a>选择协议</h3><p> 开源协议可以保障他人对你的项目进行使用，复制，修改和贡献时不会产生影响。它还保护你免受法律的困扰。<strong>当你发起一个开源项目时必须选择一个协议。</strong></p>
+<p>法律工作很乏味。好消息是你可以在你的仓库中使用一个已经存在的开源协议。这样你只花了很少的时间，但很好的保护了你的工作。</p>
+<p><a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener">MIT</a>, <a href="https://choosealicense.com/licenses/apache-2.0/" target="_blank" rel="noopener">Apache 2.0</a>, and <a href="https://choosealicense.com/licenses/gpl-3.0/" target="_blank" rel="noopener">GPLv3</a> 都是非常流行的开源协议，但是 还有<a href="https://choosealicense.com" target="_blank" rel="noopener">其它的开源协议</a> 可供你选择。</p>
+<p>当你GitHub上创建了一个新项目，你可以选择许可协议。包括可以使你的GitHub项目开源的协议。</p>
+<p><img src="https://github.com/cnbo/open-source-guide/blob/gh-pages/assets/images/starting-a-project/repository-license-picker.png" alt="pick a license"></p>
+<p>如果你还有其它的疑问或者与开源项目相关的法律问题，<a href="../legal/">请来这里</a>。</p>
+<h3 id="编写README"><a href="#编写README" class="headerlink" title="编写README"></a>编写README</h3><p>READMEs不仅解释了如何使用你的项目，他们还解释了你的项目为什么重要，以及用户可以用它做什么。</p>
+<p>在你的README中尽量要回答以下的问题：</p>
+<ul>
+<li>这个项目是做什么的？</li>
+<li>为什么这个项目有用？</li>
+<li>我该如何开始?</li>
+<li>如果我需要使用它，我能从哪里获得更多帮助。</li>
+</ul>
+<p>你可以用README去回答其它的问题，像你如何处理贡献，项目的目标是什么，开源协议的相关信息。如果你的项目不想接受贡献，或者你的项目不能用于产品，你就可以将这些写在README中。</p>
+<aside markdown="1" class="pquote"><br>  <img src="https://avatars0.githubusercontent.com/u/168572?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  一份好的文档意味着会吸引更多的用户，收到更少的支持请求，得到更多的贡献。（···）请记住你的读者们不是你。参与同一个项目的开发者们有着完全不同的经历。<br>  <p markdown="1" class="pquote-credit"><br>— @limedaring, <a href="https://www.youtube.com/watch?v=8LiV759Bje0&amp;list=PLmV2D6sIiX3U03qc-FPXgLFGFkccCEtfv&amp;index=10" target="_blank" rel="noopener">“Writing So Your Words Are Read (video)”</a><br>  </p><br></aside>
+
+<p>有时候，人们不会去编写README。因为他们觉得项目还没有完成或者他们不想要贡献。这些都是非常好的为什么要编写README的理由。</p>
+<p>为了获得更多的灵感，可以尝试使用 @18F’s <a href="https://pages.18f.gov/open-source-guide/making-readmes-readable/" target="_blank" rel="noopener">“编写可阅读的READMEs”</a> 或者 @PurpleBooth’s <a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2" target="_blank" rel="noopener">README 模板</a>去编写一份README。</p>
+<p>当你的根目录中包含README文件后，README就会显示在GitHub仓库的首页上。</p>
+<h3 id="编写你的贡献指南"><a href="#编写你的贡献指南" class="headerlink" title="编写你的贡献指南"></a>编写你的贡献指南</h3><p>一份CONTRIBUTING文件能否告诉你的粉丝如何参与你的项目。例如，文件中可能会包含如下信息：</p>
+<ul>
+<li>如何报告bug (尽量使用 <a href="https://github.com/blog/2111-issue-and-pull-request-templates" target="_blank" rel="noopener">issue 和 pull request 目标</a>)</li>
+<li>如何提议一个新特性</li>
+<li>如何建立你的开发环境和运行测试</li>
+</ul>
+<p>另外技术清单和一份CONTRIBUTING文件是一个你向贡献者传达你的期望的机会。如：</p>
+<ul>
+<li>你渴望得到什么类型的贡献</li>
+<li>项目的发展路线或者期望</li>
+<li>贡献者应该如何联系你</li>
+</ul>
+<p>使用温暖，友好的语气，并提供具体的建议（如写作文档或做一个网站）可以很大程度上让新来者感到欢迎和兴奋参与。</p>
+<p>例如，<a href="https://github.com/activeadmin/activeadmin/" target="_blank" rel="noopener">Active Admin</a> starts <a href="https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">its contributing guide</a> with:</p>
+<blockquote>
+<p>首先，感谢你考虑为Active Admin做贡献。就是因为有了像您这样的人让Active Admin成为了一个伟大的工具。</p>
+</blockquote>
+<p>在项目的早期，你的CONTRIBUTING文件会比较简单。为了做出贡献，你应该总是解释如何报告bugs或者文件issues和一些技术要求（像测试）。</p>
+<p>过了一段时间，你肯会把频繁出现的提问添加到CONTRIBUTING文件中。写下这些信息意味着会有更少的人再重复向你提相同的问题。</p>
+<p>想获得更多书写CONTRIBUTING文件的帮助，请查阅 @nayafia’s <a href="https://github.com/nayafia/contributing-template/blob/master/CONTRIBUTING-template.md" target="_blank" rel="noopener">贡献指南模板</a> or @mozilla’s <a href="http://mozillascience.github.io/working-open-workshop/contributing/" target="_blank" rel="noopener">“如何创建 CONTRIBUTING.md”</a>.</p>
+<p> 在README中附上CONTRIBUTING文件的链接，这样会让跟多的人看到。如果你 <a href="https://help.github.com/articles/setting-guidelines-for-repository-contributors/" target="_blank" rel="noopener">将CONTRIBUTING文件放在项目的仓库中</a>,GitHub会自动链接你的文件当贡献者创建一条issue或者打开一个pull request。</p>
+<p> <img src="https://github.com/cnbo/open-source-guide/blob/gh-pages/assets/images/starting-a-project/Contributing-guidelines.jpg" alt="contributing guidelines"></p>
+<h3 id="制定行为规则"><a href="#制定行为规则" class="headerlink" title="制定行为规则"></a>制定行为规则</h3><aside markdown="1" class="pquote"><br>  <img src="https://avatars3.githubusercontent.com/u/11214?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  我们有过这样的经历，我们面临什么是滥用，或者作为一名维护者试图解释为什么有些事必须按一定的方式，或者作为一名用户提出简单的问题。(…)<br>  一份行为规则会变成一份简单的参考和可链接的表示你的团队提出的建设性的话语非常认真的文档。<br>  <p markdown="1" class="pquote-credit"><br>— @mlynch, <a href="https://medium.com/ionic-and-the-mobile-web/making-open-source-a-happier-place-3b90d254f5f#.v4qhl7t7v" target="_blank" rel="noopener">“Making Open Source a Happier Place”</a><br>  </p><br></aside>
+
+<p>最后，一份行为规则帮助你为你项目的参与者建立了行为准则。如果你为一个社区或者一家公司发起一个开源项目，它是非常有价值的。一份行为规则授权你促成健康，有建设性的社区行为，这回减轻你作为一名维护者的压力。</p>
+<p>想获得更多信息，请查阅我们的 <a href="https://github.com/cnbo/open-source-guide/blob/gh-pages/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">行为规则指南</a>.</p>
+<p>除了沟通如何期望参与者行为之外，行为准则还倾向于描述这些期望适用于谁，何时应用，以及如果违规发生时该做什么。</p>
+<p>许多开源协议一般也会为行为规则制定标准，所以你可以不用再编写。这份<a href="http://contributor-covenant.org/" target="_blank" rel="noopener">贡献者盟约</a>  是一份被<a href="http://contributor-covenant.org/adopters/" target="_blank" rel="noopener">超过40,000个开源项目</a>所使用的行为规则，包括 Kubernetes, Rails和Swift。无论你使用哪个文本，在必要的时候你都应该执行你的行为规则。</p>
+<p>将文本直接粘贴到你仓库中的CODE_OF_CONDUCT文件中。将文件放在项目的根目录中方便查找，同时在README中添加相应的链接。</p>
+<h2 id="命名和品牌化你的项目"><a href="#命名和品牌化你的项目" class="headerlink" title="命名和品牌化你的项目"></a>命名和品牌化你的项目</h2><p>品牌不仅是一个华丽的logo或者易记的项目名。它还关于你如何谈论你的项目，以及你想把信息传递给谁。</p>
+<h3 id="选择正确的名字"><a href="#选择正确的名字" class="headerlink" title="选择正确的名字"></a>选择正确的名字</h3><p>选择一个容易记住，有创意，能表达项目用意的名字。例如：</p>
+<ul>
+<li><a href="https://github.com/getsentry/sentry" target="_blank" rel="noopener">Sentry</a> 监控应用程序的崩溃报告</li>
+<li><a href="https://github.com/macournoyer/thin" target="_blank" rel="noopener">Thin</a> 是一个简单快速的Ruby web服务器。</li>
+</ul>
+<p>如果你的项目是基于一个已存在的项目创建，那么使用他们的名字作为你项目名的前缀会帮助你阐述你项目的用途。 (例如 <a href="https://github.com/bitinn/node-fetch" target="_blank" rel="noopener">node-fetch</a>将<code>window.fetch</code> 添加到了 Node.js)。</p>
+<p>考虑阐明所有。押韵虽然有趣，但是记住玩笑不可能转变成其它的文化，或者他人与你有不同的经历。你的一些潜在用户可能是公司员工，你不能让他们在工作中很难解释你的项目！</p>
+<h3 id="避免命名冲突"><a href="#避免命名冲突" class="headerlink" title="避免命名冲突"></a>避免命名冲突</h3><p><a href="http://ivantomic.com/projects/ospnc/" target="_blank" rel="noopener">查看是否有同名的开源项目</a>，尤其是你分享的是同样的语言或者生态系统。如果你的名字与一个已存在的知名的项目有冲突，你会让你的粉丝感到困惑。</p>
+<p>如果你想要一个网站，Twitter账号或者其他特性来展示你的项目，先确保你能得到你想要的名字。理想情况下，为了美好的未来<a href="https://instantdomainsearch.com/" target="_blank" rel="noopener">现在保留这些名字</a>，即使你现在不想用他们。</p>
+<p>确保你的项目名没有侵权。如果有侵权，可能会有公司要求你的项目下架，或者对你采取法律措施。这样得不偿失。</p>
+<p> 你可以查阅<a href="http://www.wipo.int/branddb/en/" target="_blank" rel="noopener">WIPO全球品牌数据库</a>避免商标冲突。如果你是在公司工作，<a href="../legal/">法律团队会帮你做这件事</a>。</p>
+<p>最后，去谷歌搜索你的项目名。大家会很容易地找到你的项目吗？在搜索结果礼是否有你不想让大家看到的东西？</p>
+<h3 id="你的写作（和代码）如何影响你的品牌"><a href="#你的写作（和代码）如何影响你的品牌" class="headerlink" title="你的写作（和代码）如何影响你的品牌"></a>你的写作（和代码）如何影响你的品牌</h3><p>在项目的整个生命周期中，你需要做很多文字工作：READMEs，教程，社区文档，回复issues，甚至肯能要处理很多来信和邮件。</p>
+<p>是否是官方文档或者一封普通的邮件，你的书写风格都是你项目品牌的一部分。考虑你可能会拥有粉丝，以及这是你想传达的声音。</p>
+<aside markdown="1" class="pquote"><br>  <img src="https://avatars0.githubusercontent.com/u/11321?v=3&s=460" class="pquote-avatar" alt="avatar"><br>  我尝试处理每一个细节，包括：处理邮件，展示示例，友好待人，认真处理大家的issues以及试图帮助到大家。经过一段时间后，大家可能不再是只问问题，还会帮助我解决其他人的疑问以及给我喜悦，他们模仿我的风格。<br>  <p markdown="1" class="pquote-credit"><br>— @janl on <a href="https://github.com/apache/couchdb" target="_blank" rel="noopener">CouchDB</a>, <a href="http://writing.jan.io/2015/11/20/sustainable-open-source.html" target="_blank" rel="noopener">“Sustainable Open Source”</a><br>  </p><br></aside>
+
+<p>使用热情，通俗易懂的语言（如“他们”，即使是指一个人）能够让新来的贡献者感觉项目非常欢迎他们。使用简单的语言，因为你的读者可能英语不是很好。</p>
+<p>除了书写风格外，你的编码风格也是你项目品牌的一部分。 <a href="https://github.com/johnpapa/angular-styleguide" target="_blank" rel="noopener">Angular</a> 和 <a href="http://contribute.jquery.org/style-guide/js/" target="_blank" rel="noopener">jQuery</a>是两个项目代码风格严谨的示例和指南。</p>
+<p>当你的项目才开始时，没有必要为项目编写一份风格指南。你可能会发现你喜欢将不同的编码风格融入到项目。但是你应该想到你的书写和编码风格会吸引或者拒绝不同类型的人。项目的早期是你建立你希望看见的先例的机会。</p>
+<h2 id="你的预发布清单"><a href="#你的预发布清单" class="headerlink" title="你的预发布清单"></a>你的预发布清单</h2><p>准备好开源你的项目了吗？有一份帮助检查清单。检查所有内容？你准备开始吧！ <a href="https://help.github.com/articles/making-a-private-repository-public/" target="_blank" rel="noopener">点击 “publish”</a> 以及拍下自己的后背。</p>
+<p><strong>文档</strong></p>
+<ul>
+<li><p>需要为项目指定一个开源协议</p>
+</li>
+<li><p>项目要有基础文档 (README, CONTRIBUTING, CODE_OF_CONDUCT)</p>
+</li>
+<li><p>易记的项目名，指出项目是做什么的，不能和已存在的项目冲突或者商标侵权</p>
+</li>
+<li><p>最新的issue队列，组织和标记清除的issues</p>
+</li>
+</ul>
+<p><strong>代码</strong></p>
+<ul>
+<li><p>项目使用一致的代码风格和明确的功能/方法/可用的名字</p>
+</li>
+<li><p>注释清晰的代码，记录意图和边缘案例</p>
+</li>
+<li><p>在修改历史，issues或者 pull requests 中没有敏感的信息 (例如 密码或者其他不能公开的信息)</p>
+</li>
+</ul>
+<p><strong>人</strong></p>
+<p>如果你是代表个人：</p>
+<ul>
+<li>你已经告诉了你的法律部门，以及/或者理解了你公司（如果你是某一家公司的员工）的开源政策和IP</li>
+</ul>
+<p>如果你有一家公司或者组织：</p>
+<ul>
+<li><p>你已经告诉了你的法律部门</p>
+</li>
+<li><p>你有一个宣布和促进项目的营销计划</p>
+</li>
+<li><p>一些人被允许管理社区互动（回复issues，检查和合并pull requests）</p>
+</li>
+<li><p>至少有两人管理访问项目</p>
+</li>
+</ul>
+<h2 id="你做到了！"><a href="#你做到了！" class="headerlink" title="你做到了！"></a>你做到了！</h2><p>恭喜你开源了你的首个项目。不论结果如何，对开源社区都是一份礼物。随着每次commit,comment和pull request，你正在为自己或者他人创造学习和成长的机会。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>有钱的捧个钱场，没钱的捧个人场</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="liadbiz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/github-open-source-guide-04/" rel="next" title="Github开源项目贡献指南-创建开放的社区[译文]">
+                <i class="fa fa-chevron-left"></i> Github开源项目贡献指南-创建开放的社区[译文]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/github-open-source-guide-03/" rel="prev" title="Github开源项目贡献指南-找到你的用户[译文]">
+                Github开源项目贡献指南-找到你的用户[译文] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/monkey_logo.jpg"
+                alt="liadbiz" />
+            
+              <p class="site-author-name" itemprop="name">liadbiz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liadbiz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhuhh2@shanghaitech.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是开源，为什么要开源"><span class="nav-number">1.</span> <span class="nav-text">什么是开源，为什么要开源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#“开源”意味着什么？"><span class="nav-number">1.1.</span> <span class="nav-text">“开源”意味着什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人们为什么要将他们的工作开源？"><span class="nav-number">1.2.</span> <span class="nav-text">人们为什么要将他们的工作开源？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源是否意味着免费"><span class="nav-number">1.3.</span> <span class="nav-text">开源是否意味着免费?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我应该发起属于自己的开源项目吗"><span class="nav-number">2.</span> <span class="nav-text">我应该发起属于自己的开源项目吗?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设定你的目标"><span class="nav-number">2.1.</span> <span class="nav-text">设定你的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为其他的项目做贡"><span class="nav-number">2.2.</span> <span class="nav-text">为其他的项目做贡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起属于你的开源项目"><span class="nav-number">3.</span> <span class="nav-text">发起属于你的开源项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择协议"><span class="nav-number">3.1.</span> <span class="nav-text">选择协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写README"><span class="nav-number">3.2.</span> <span class="nav-text">编写README</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写你的贡献指南"><span class="nav-number">3.3.</span> <span class="nav-text">编写你的贡献指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制定行为规则"><span class="nav-number">3.4.</span> <span class="nav-text">制定行为规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名和品牌化你的项目"><span class="nav-number">4.</span> <span class="nav-text">命名和品牌化你的项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择正确的名字"><span class="nav-number">4.1.</span> <span class="nav-text">选择正确的名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免命名冲突"><span class="nav-number">4.2.</span> <span class="nav-text">避免命名冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的写作（和代码）如何影响你的品牌"><span class="nav-number">4.3.</span> <span class="nav-text">你的写作（和代码）如何影响你的品牌</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你的预发布清单"><span class="nav-number">5.</span> <span class="nav-text">你的预发布清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你做到了！"><span class="nav-number">6.</span> <span class="nav-text">你做到了！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liadbiz</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz',
+        appKey: '33lGH9xlJ9OHVOFzlKcneMml',
+        placeholder: '聊五毛钱的天儿呗',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz", "33lGH9xlJ9OHVOFzlKcneMml");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

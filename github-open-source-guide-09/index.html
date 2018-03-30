@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta name="google-site-verification" content="A10gB5knD13kj0AnV_W44ZQAWP0Qy4ECwlgdlighbTI" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5.1.4">
+
+
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="github," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么要度量所有事当数据被合理使用的时候，能够帮助你作为一个开源项目维护者做出更好的决定。 有更多的信息的时候，你可以：  理解用户对一个新功能是怎么反应的 搞清楚新用户是从哪里来的 鉴别，并且决定是否支持一个跑偏的使用场景或者功能 量化你项目的流行程度 知道你的项目是怎样被别人使用的 通过赞助商或者赞赏挣点小钱  举个例子，Homebrew 发现谷歌数据分析帮助他们对工作分优先级  Homebr">
+<meta name="keywords" content="github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github开源项目贡献指南-开源项目的度量标准[译文]">
+<meta property="og:url" content="http://liadbiz.github.io/github-open-source-guide-09/index.html">
+<meta property="og:site_name" content="liadbiz&#39;s blog">
+<meta property="og:description" content="为什么要度量所有事当数据被合理使用的时候，能够帮助你作为一个开源项目维护者做出更好的决定。 有更多的信息的时候，你可以：  理解用户对一个新功能是怎么反应的 搞清楚新用户是从哪里来的 鉴别，并且决定是否支持一个跑偏的使用场景或者功能 量化你项目的流行程度 知道你的项目是怎样被别人使用的 通过赞助商或者赞赏挣点小钱  举个例子，Homebrew 发现谷歌数据分析帮助他们对工作分优先级  Homebr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://liadbiz.github.io/assets/images/metrics/repo_traffic_graphs_tooltip.png">
+<meta property="og:image" content="http://liadbiz.github.io/assets/images/metrics/clone_graph.png">
+<meta property="og:image" content="http://liadbiz.github.io/assets/images/metrics/repo_contributors_specific_graph.png">
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/4483">
+<meta property="og:updated_time" content="2018-03-30T05:31:23.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github开源项目贡献指南-开源项目的度量标准[译文]">
+<meta name="twitter:description" content="为什么要度量所有事当数据被合理使用的时候，能够帮助你作为一个开源项目维护者做出更好的决定。 有更多的信息的时候，你可以：  理解用户对一个新功能是怎么反应的 搞清楚新用户是从哪里来的 鉴别，并且决定是否支持一个跑偏的使用场景或者功能 量化你项目的流行程度 知道你的项目是怎样被别人使用的 通过赞助商或者赞赏挣点小钱  举个例子，Homebrew 发现谷歌数据分析帮助他们对工作分优先级  Homebr">
+<meta name="twitter:image" content="http://liadbiz.github.io/assets/images/metrics/repo_traffic_graphs_tooltip.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liadbiz.github.io/github-open-source-guide-09/"/>
+
+
+
+
+
+  <title>Github开源项目贡献指南-开源项目的度量标准[译文] | liadbiz's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">liadbiz's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Explain better</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liadbiz.github.io/github-open-source-guide-09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liadbiz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/monkey_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liadbiz's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Github开源项目贡献指南-开源项目的度量标准[译文]</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T22:44:02+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/github-open-source-guide-09/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/github-open-source-guide-09/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/github-open-source-guide-09/" class="leancloud_visitors" data-flag-title="Github开源项目贡献指南-开源项目的度量标准[译文]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="为什么要度量所有事"><a href="#为什么要度量所有事" class="headerlink" title="为什么要度量所有事"></a>为什么要度量所有事</h2><p>当数据被合理使用的时候，能够帮助你作为一个开源项目维护者做出更好的决定。</p>
+<p>有更多的信息的时候，你可以：</p>
+<ul>
+<li>理解用户对一个新功能是怎么反应的</li>
+<li>搞清楚新用户是从哪里来的</li>
+<li>鉴别，并且决定是否支持一个跑偏的使用场景或者功能</li>
+<li>量化你项目的流行程度</li>
+<li>知道你的项目是怎样被别人使用的</li>
+<li>通过赞助商或者赞赏挣点小钱</li>
+</ul>
+<p>举个例子，<a href="https://github.com/Homebrew/brew/blob/bbed7246bc5c5b7acb8c1d427d10b43e090dfd39/docs/Analytics.md" target="_blank" rel="noopener">Homebrew</a> 发现谷歌数据分析帮助他们对工作分优先级</p>
+<blockquote>
+<p>Homebrew 是免费的，完全由志愿者在业余时间维护。所以，我们没有资源去做详细的Hemobrew用户调查从而决定如何更好的设计未来的新功能和对当前的工作分出优先级。匿名的聚合用户数据分析让我们基于用户如何，何地，何时使用Homebrew来优先考虑某些补丁和功能</p>
+</blockquote>
+<p>流行程度不是一切。每个人都是因为不同的原因参与到开源项目中来，如果你做项目维护者的原因是展示你的工作成果，公开你的代码，或者只是为了好玩，那么度量标准可能对你来说不是那么重要。</p>
+<p>如果你对深入理解你的项目感兴趣，那么请继续阅读下文介绍的分析你项目的活跃度的方法。</p>
+<h2 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h2><p>在有人能够使用或者回馈你的项目之前，他们得知道项目的存在，问问你自己：<em>人们在找这个项目吗？</em></p>
+<p><img src="/assets/images/metrics/repo_traffic_graphs_tooltip.png" alt="traffic graph"></p>
+<p>如果你的项目是托管在Github, 你可以<a href="https://help.github.com/articles/about-repository-graphs/#traffic" target="_blank" rel="noopener">访问</a> 获取诸如多少人访问过你的项目，他们从哪里之类的信息。在你得项目主页，地阿基”Graphs”, 然后”Traffic”。在这个页面，你可以看到:</p>
+<ul>
+<li><p><strong>总浏览量:</strong> 告诉你你的项目被查看了多少次</p>
+</li>
+<li><p><strong>总独立访问者:</strong> 告诉你多少人看了你项目</p>
+</li>
+<li><p><strong>关联网站:</strong> 告诉你访问者从哪里来的。这个数据能帮助你搞清楚哪里可以接触到你的受众和你为推广做出的努力是不是有效的。</p>
+</li>
+<li><p><strong>受欢迎的内容:</strong> 告诉你访问者都查看了你项目的那些内容，按照页面访问量和独立访客数。</p>
+</li>
+</ul>
+<p><a href="https://help.github.com/articles/about-stars/" target="_blank" rel="noopener">GitHub stars</a> 可以提供一个基本的衡量流行度的标准。然而GitHub 点赞数并不合下载量和使用量直接挂钩，但是他可以可以告诉你多少人在注意的项目。</p>
+<p>你也许想要<a href="https://opensource.com/business/16/6/pirate-metrics" target="_blank" rel="noopener">track discoverability in specific places</a>: 举个例子，Google PageRank，会跟踪来自你项目网站的流量，或者跟踪来自其他开源项目或者网站的流量。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>人们在这个广袤而且疯狂的我们称之为互联网的地方寻找你的项目。理想情况下，当他们看到你的项目的时候，他们会情不自禁的做点什么。第二个问题你要问自己的是：<em>人们在使用你的项目吗？</em></p>
+<p>如果你使用一个包的管理工具，比如说npm或者RubyGems.org，来发布你的项目，你就可以跟踪你的吗的下载量。</p>
+<p>每个包管理工具可能会对下载量有着大同小异的定义，而且下载量不直接和安装和使用相关，但是它提供了一个基本的比较标准。尝试使用<a href="https://libraries.io/" target="_blank" rel="noopener">Libraries.io</a> 来跟踪很多流行包管理工具的使用数据。</p>
+<p>如果你的项目是托管在Github上的，再一次切换到”Traffic” 页面，你可以用<a href="https://github.com/blog/1873-clone-graphs" target="_blank" rel="noopener">clone graph</a>看看你的项目在一个给定的日期被克隆了多少次，按照独立克隆者的总克隆数排序。</p>
+<p><img src="/assets/images/metrics/clone_graph.png" alt="clone graph"></p>
+<p>如果这个功能低估了发现你项目的人数，那么有两个问题值得考虑。他们是：</p>
+<ul>
+<li>你的项目没有成功的转化你的受众，或者</li>
+<li>你吸引了错误的受众</li>
+</ul>
+<p>举个例子，如果你的项目占据了Hacker News的头版头条，你可能会看到一个流量的高峰，但是与此同时，转化率会比较低，因为Hacker News上所有人都看见了你的项目。</p>
+<p>努力找出你的观众是从哪里来的，然后在你的项目主页寻求他们的反馈，看看是上述两种情况的哪一种</p>
+<h2 id="保持"><a href="#保持" class="headerlink" title="保持"></a>保持</h2><p>人们发现了你的项目，而且已经在使用他们了。下一个你要问自己的问题就是：人们有对这个项目回馈吗？</p>
+<p>不管什么时候考虑贡献者这个问题都不算早。没有别人的参与，你就可能会把你放到一个尴尬的境地，那就是你的项目虽然很_流行<em>（很多人用）但是并不被</em>支持_（维护者没有足够的事件来满足用户的额需求）。</p>
+<p>保持项目的进展需要<a href="http://blog.abigailcabunoc.com/increasing-developer-engagement-at-mozilla-science-learning-advocacy#contributor-pathways_2" target="_blank" rel="noopener">贡献者的流动</a>（意思是有进有出）因为之前很活跃的贡献者也可能会去干别的事情。</p>
+<p>你可能想要经常用的衡量社区的指标包括：</p>
+<ul>
+<li><strong>贡献者的总数和每个贡献者的提交次数：</strong> 告诉你你有多少贡献者，哪些是活跃的，哪些是不活跃。github上，你可以在”Graphs” -&gt; “Contributers”面板查看这些信息。目前，这个图标只计算了那些往仓库默认分支推送的贡献者。</li>
+</ul>
+<p><img src="/assets/images/metrics/repo_contributors_specific_graph.png" alt="contributor graph"></p>
+<ul>
+<li><p><strong>第一次，偶然的，和持续的贡献者：</strong> 帮助你检测你是否有新的贡献者，然后他们是不是会再来。（偶然的贡献者事那些提交的次数很少的人，当然啦，这个数目是多少取决于你，比如说五次。）如果没有新的贡献者，你的项目就会停滞不前。</p>
+</li>
+<li><p><strong>打开的issue的数目和PR的数目</strong>如果这些数目太高，就意味着你可能需要有人帮你给issue分类和做代码审查</p>
+</li>
+<li><p><strong>所有的打开过的issue和PR：</strong> 一个issue被人提出说明你的项目对他来说比较重要。如果这个数目随着时间在增长，这就意味着人们对你的项目感兴趣。</p>
+</li>
+<li><p><strong>不同种类的贡献者</strong> 比如说，提交代码，修复笔误或者bug，或者在issue下面评论。</p>
+</li>
+</ul>
+<aside markdown="1" class="pquote"><br>  <img src="https://avatars1.githubusercontent.com/u/4483" class="pquote-avatar" alt="avatar"><br>  Open source is more than just code. Successful open source projects include code and documentation contributions together with conversations about these changes.<br>  <p markdown="1" class="pquote-credit"><br>— @arfon, <a href="https://github.com/blog/2195-the-shape-of-open-source" target="_blank" rel="noopener">“The Shape of Open Source”</a><br>  </p><br></aside>
+
+<h2 id="维护者的活跃程度"><a href="#维护者的活跃程度" class="headerlink" title="维护者的活跃程度"></a>维护者的活跃程度</h2><p>最后，你还需要确定一件事，那就是维护者有足够的能力和时间处理社区的贡献。最后一个问题你要问自己的是：我是不是对社区有足够的回应？</p>
+<p>不回应社区的维护者是限制开源项目发展的瓶颈。如果一个人做了一次贡献但是没有收到维护者的回复，他们会感到沮丧然后离开。</p>
+<p><a href="https://docs.google.com/presentation/d/1hsJLv1ieSqtXBzd5YZusY-mB8e1VJzaeOmh8Q4VeMio/edit#slide=id.g43d857af8_0177" target="_blank" rel="noopener">Research from Mozilla</a> suggests that maintainer responsiveness is a critical factor in encouraging repeat contributions.</p>
+<p>考虑记录一下你或者其他的项目维护者对一次贡献（issue或者PR）回应的时间，回应并不需要花多少力气。就算只是说一句：“谢谢你的贡献，我下周会查看的”</p>
+<p>你也可以测量一在一个贡献被处理的过程中状态变化的时间。比如：</p>
+<ul>
+<li>一个issue保持打开状态的时间（也就代表一个问题保持没有被解决状态的时间）*</li>
+<li>一个issue是否因为一个PR得到了解决。</li>
+<li>陈旧的iuuse是否被关闭了（被解决的问题应该关闭）</li>
+<li>合并一个PR的时间</li>
+</ul>
+<h2 id="通过📊-看人的行为"><a href="#通过📊-看人的行为" class="headerlink" title="通过📊 看人的行为"></a>通过📊 看人的行为</h2><p>理解这些指标可以帮你创建一个活跃的，增长的开源项目。即使你没有跟踪面板上的每一个指标，用上面提到的框架来把你的注意力放到那些会帮助项目茁壮成长的指标上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>有钱的捧个钱场，没钱的捧个人场</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="liadbiz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/github-open-source-guide-10/" rel="next" title="Github开源项目贡献指南-开源项目的度量标准[译文]">
+                <i class="fa fa-chevron-left"></i> Github开源项目贡献指南-开源项目的度量标准[译文]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/github-open-source-guide-01/" rel="prev" title="Github开源项目贡献指南-怎么给开源项目做贡献[译文]">
+                Github开源项目贡献指南-怎么给开源项目做贡献[译文] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/monkey_logo.jpg"
+                alt="liadbiz" />
+            
+              <p class="site-author-name" itemprop="name">liadbiz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liadbiz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhuhh2@shanghaitech.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要度量所有事"><span class="nav-number">1.</span> <span class="nav-text">为什么要度量所有事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发现"><span class="nav-number">2.</span> <span class="nav-text">发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保持"><span class="nav-number">4.</span> <span class="nav-text">保持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维护者的活跃程度"><span class="nav-number">5.</span> <span class="nav-text">维护者的活跃程度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过📊-看人的行为"><span class="nav-number">6.</span> <span class="nav-text">通过📊 看人的行为</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liadbiz</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz',
+        appKey: '33lGH9xlJ9OHVOFzlKcneMml',
+        placeholder: '聊五毛钱的天儿呗',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz", "33lGH9xlJ9OHVOFzlKcneMml");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

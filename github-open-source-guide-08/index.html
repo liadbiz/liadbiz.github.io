@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta name="google-site-verification" content="A10gB5knD13kj0AnV_W44ZQAWP0Qy4ECwlgdlighbTI" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5.1.4">
+
+
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="github," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我为什么需要行为守则？行为守则是一份确立项目参与者行为规范的文件。采用和执行行为守则可以帮助你们的社区营造积极的氛围。 行为守则不仅帮助保护你们的参与者，同时还有你们自己。如果你们维护一个项目，随着时间的推移，可能会发现其他参与者懒散的态度会让你们疲惫或对工作不满意。 一份行为守则可以帮助你们促进健康，有建设性的社区行为。积极主动减少你们或其他人在你们的项目中变得疲劳的可能性，并帮助你们在有人做出">
+<meta name="keywords" content="github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github开源项目贡献指南-你的行为准则[译文]">
+<meta property="og:url" content="http://liadbiz.github.io/github-open-source-guide-08/index.html">
+<meta property="og:site_name" content="liadbiz&#39;s blog">
+<meta property="og:description" content="我为什么需要行为守则？行为守则是一份确立项目参与者行为规范的文件。采用和执行行为守则可以帮助你们的社区营造积极的氛围。 行为守则不仅帮助保护你们的参与者，同时还有你们自己。如果你们维护一个项目，随着时间的推移，可能会发现其他参与者懒散的态度会让你们疲惫或对工作不满意。 一份行为守则可以帮助你们促进健康，有建设性的社区行为。积极主动减少你们或其他人在你们的项目中变得疲劳的可能性，并帮助你们在有人做出">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-30T05:31:23.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github开源项目贡献指南-你的行为准则[译文]">
+<meta name="twitter:description" content="我为什么需要行为守则？行为守则是一份确立项目参与者行为规范的文件。采用和执行行为守则可以帮助你们的社区营造积极的氛围。 行为守则不仅帮助保护你们的参与者，同时还有你们自己。如果你们维护一个项目，随着时间的推移，可能会发现其他参与者懒散的态度会让你们疲惫或对工作不满意。 一份行为守则可以帮助你们促进健康，有建设性的社区行为。积极主动减少你们或其他人在你们的项目中变得疲劳的可能性，并帮助你们在有人做出">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liadbiz.github.io/github-open-source-guide-08/"/>
+
+
+
+
+
+  <title>Github开源项目贡献指南-你的行为准则[译文] | liadbiz's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">liadbiz's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Explain better</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liadbiz.github.io/github-open-source-guide-08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liadbiz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/monkey_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liadbiz's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Github开源项目贡献指南-你的行为准则[译文]</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T22:44:02+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/github-open-source-guide-08/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/github-open-source-guide-08/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/github-open-source-guide-08/" class="leancloud_visitors" data-flag-title="Github开源项目贡献指南-你的行为准则[译文]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="我为什么需要行为守则？"><a href="#我为什么需要行为守则？" class="headerlink" title="我为什么需要行为守则？"></a>我为什么需要行为守则？</h2><p>行为守则是一份确立项目参与者行为规范的文件。采用和执行行为守则可以帮助你们的社区营造积极的氛围。</p>
+<p>行为守则不仅帮助保护你们的参与者，同时还有你们自己。如果你们维护一个项目，随着时间的推移，可能会发现其他参与者懒散的态度会让你们疲惫或对工作不满意。</p>
+<p>一份行为守则可以帮助你们促进健康，有建设性的社区行为。积极主动减少你们或其他人在你们的项目中变得疲劳的可能性，并帮助你们在有人做出你们不同意的事情时采取行动。</p>
+<h2 id="建立行为守则"><a href="#建立行为守则" class="headerlink" title="建立行为守则"></a>建立行为守则</h2><p>尽可能早地建立行为守则，当你们第一次创建项目的时候。</p>
+<p>此外，说出你们的要求。行为守则的描述遵循如下几点：</p>
+<ul>
+<li>行为守则在哪里有效 <em>(只在issues以及pull requests，或者社区活动？)</em>  </li>
+<li>行为守则适用于谁 <em>(社区成员以及维护者，那赞助商呢？)</em></li>
+<li>如果有人违反了行为守则会怎样？</li>
+<li>大家如何举报违规</li>
+</ul>
+<p>无论你们在哪里，请使用已有的行为守则。<a href="http://contributor-covenant.org/" target="_blank" rel="noopener">贡献者盟约</a>是一个被超过40，000个开源项目（包括Kubernetes, Rails和Swift）所使用的行为守则。</p>
+<p><a href="https://www.djangoproject.com/conduct/" target="_blank" rel="noopener">Django行为守则</a>和<a href="http://citizencodeofconduct.org/" target="_blank" rel="noopener">Citizen行为守则</a>都是非常好的行为守则。</p>
+<p>请将CODE_OF_CONDUCT文件放在你们项目的根目录，并在README中附上其链接，这样对你们的社区是可见的。</p>
+<h2 id="决定你们如何执行行为守则"><a href="#决定你们如何执行行为守则" class="headerlink" title="决定你们如何执行行为守则"></a>决定你们如何执行行为守则</h2><aside markdown="1" class="pquote"><br>  一份行为守则没有（或者不能）执行会比没有行为守则更糟糕。它释放这样一个信息：行为守则或者尊重在你们的社区并不重要。<br>  <p markdown="1" class="pquote-credit"><br>— <a href="https://adainitiative.org/2014/02/18/howto-design-a-code-of-conduct-for-your-community/" target="_blank" rel="noopener">Ada Initiative</a><br>  </p><br></aside>
+
+<p>你们应该解释如何执行行为守则在违规发生<strong>之前</strong>。有几点理由说明为什么这么做：</p>
+<ul>
+<li><p>必要的时候，它表示你们处事认真谨慎。</p>
+</li>
+<li><p>你们的社区会因为投诉确实可以得到回复而更加放心。</p>
+</li>
+<li><p>如果他们发现自己因为违规而被调查时，你们能确保社区的审查流程是公平透明的。</p>
+</li>
+</ul>
+<p>你们可以给大家一个私有的渠道（如email地址）以便大家报告违规行为以及解释谁收到了这一的报告。它可以是维护者，一组维护者或行为守则工作组。</p>
+<p>请不要忘记了有人可能想要报告某些人违规接受了这些报告。在这样的情况下，也给他们举报那些人的机会。例如，@ctb和@mr-c <a href="https://github.com/dib-lab/khmer/blob/master/CODE_OF_CONDUCT.rst" target="_blank" rel="noopener">在他们的项目上解释</a>， <a href="https://github.com/dib-lab/khmer" target="_blank" rel="noopener">khmer</a>：</p>
+<blockquote>
+<p>对于滥用现象，扰乱或者其他不可接受的行为都可以向<a href="mailto:**khmer-project@idyll.org" target="_blank" rel="noopener">**khmer-project@idyll.org</a><strong>（仅由C. Titus Brown和Michael R. Crusoe处理）发送邮件。要报告涉及其中任何一个的问题，请电邮</strong>Judi Brown Clarke，Ph.D.** BEACON行动进化研究中心的多元化主任，NSF科学技术中心。</p>
+</blockquote>
+<p>为了获得灵感，可以查阅Django的<a href="https://www.djangoproject.com/conduct/enforcement-manual/" target="_blank" rel="noopener">执行手册</a>（你们是否需要如此详细的手册，这取决于你们的项目）。</p>
+<h2 id="执行你们的行为守则"><a href="#执行你们的行为守则" class="headerlink" title="执行你们的行为守则"></a>执行你们的行为守则</h2><p>有时，尽管你们尽了最大的努力，仍然会有人违反守则。当这样的情况发生时，有几种方法来解决消极或有害的行为。</p>
+<h3 id="搜集有关违规的信息"><a href="#搜集有关违规的信息" class="headerlink" title="搜集有关违规的信息"></a>搜集有关违规的信息</h3><p>认真对待社区中每个成员的想法。如果你们收到有人违规的报告，请认真对待并调查此事，即使它不符合你们自己的经验。这样做可以向你们的社区表面，你们珍视他们的观点和信任他们的判断。</p>
+<p>有的社区成员可能是让大家一直不舒服的惯犯，或者他们只是说了或做了一次。这都需要依据实际情况进行处理。</p>
+<p>在你们做出回应之前，请认真思考发生了什么事。通过阅读他们过去的评论和对话可以更好地理解他们为什么要那样做。尽量收集其他人对他们行为的看法。</p>
+<aside markdown="1" class="pquote"><br>  不要陷入争论。在你们处理完手头上的事情之前，不要侧重于处理别人的行为。专注于你们需要什么。<br>  <p markdown="1" class="pquote-credit"><br>— Stephanie Zvan, <a href="https://the-orbit.net/almostdiamonds/2014/04/10/so-youve-got-yourself-a-policy-now-what/" target="_blank" rel="noopener">“So You’ve Got Yourself a Policy. Now What?”</a><br>  </p><br></aside>
+
+<h3 id="采取适当的行动"><a href="#采取适当的行动" class="headerlink" title="采取适当的行动"></a>采取适当的行动</h3><p>当搜集和处理足够的信息后，你们需要决定做什么。当你们在考虑下一步的时候，请牢记你们的目的是营造一个安全，尊重和协作的社区氛围。不仅要考虑如何处理有问题的情况，还要考虑们的反应将如何影响你们社区的其他行为和期望。</p>
+<p>当有人报告违规时，处理它是你们的工作，而不是他们的。有时，报告者透露他们的信息会给他们的职业生涯，声誉和人生安全带来很大的风险。迫使报告者面对骚扰者会将他们置于妥协的位置。除非报告者有特别的要求，你们应该直接和有问题的人沟通。</p>
+<p>这里有些方法帮助你们回应违规行为：</p>
+<ul>
+<li><p><strong>向相关人员发出公开警告</strong>以及解释他们的行为产生了怎样的负面影响，最好在发生问题的地方。在可能的情况下，公开沟通会向社区的其他人传达你们认真对待行为守则。要友善，但坚定的沟通。</p>
+</li>
+<li><p><strong>私下接触相关人员</strong>向他们解释他们的行为对其他人产生了怎样的负面影响。如果相关情况涉及到个人敏感信息，你们可能会使用私有通信方式。如果你们和一些人私下沟通，对于首先报告这个情况的CC来说是个好主意，因为他们知道你们采取了行动。在征求他们的意见之前，请向报告人征求同意。</p>
+</li>
+</ul>
+<p>有时，一个解决方案不能达到目的。有关的人可能在面对或者不改变他们的行为时变得气势汹汹或敌对。在这种情况下，你会想到考虑采用强制措施。例如：</p>
+<ul>
+<li><p><strong>暂停有关人员</strong>在项目中的工作，通过暂时禁止参与项目的任何方面执行</p>
+</li>
+<li><p><strong>永久禁止</strong>有关人员加入项目</p>
+</li>
+</ul>
+<p>对于禁止成员的做法，你们应该非常谨慎，只有在没有其他解决方案的情况下才能使用。  </p>
+<h2 id="维护者的责任和义务"><a href="#维护者的责任和义务" class="headerlink" title="维护者的责任和义务"></a>维护者的责任和义务</h2><p>行为守则不是可以任意执行的法律。你们是行为守则的执行者，同时你们的责任是遵守行为守则确立的规矩。</p>
+<p>作为维护者，你们可以为社区指定准则，同时你们可以根据行为守则执行这些准则。这意味着你们需要认真处理违规行为。报告者对他们的投诉进行了彻底和认真地审查。如果你们确定他们报告的行为没有违规，你们需要他们进行沟通并解释你们为什么不进行处理。他们会怎样做，取决于他们：容忍他们认为有问题的行为，或者停止参与社区。</p>
+<p>如果报告的行为没有<em>技术上</em>的违规，这可能表面你们的社区依然存在问题，同时你们应该调查潜在的问题以及采取相应的行动。这可能包括修改你们的行为守则，以澄清可接受的行为和/或与行为被举报的人交谈，并告诉他们，虽然他们没有违反行为守则，但是他们在期望和确定的边缘另其他参与者感到不舒服。</p>
+<p>最后，作为维护者，你们给可接受的行为建立和执行标准。你们有能力塑造项目社区的价值观，以及参与者希望你们能 公平公正地执行这些价值观。</p>
+<h2 id="鼓励你们希望看见的行为-🌎"><a href="#鼓励你们希望看见的行为-🌎" class="headerlink" title="鼓励你们希望看见的行为 🌎"></a>鼓励你们希望看见的行为 🌎</h2><p>当你们的社区变得似乎敌对或者不受欢迎时，即使是一个大家能容忍的个人行为，也会让你们失去很多贡献者，你们可能再也遇不到其中的一些人。虽然执行或者采用行为守则很难，但是营造一个受欢迎的环境将帮助你们社区成长。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>有钱的捧个钱场，没钱的捧个人场</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="liadbiz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/github-open-source-guide-05/" rel="next" title="Github开源项目贡献指南-项目维护者的最佳实践[译文]">
+                <i class="fa fa-chevron-left"></i> Github开源项目贡献指南-项目维护者的最佳实践[译文]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/github-open-source-guide-10/" rel="prev" title="Github开源项目贡献指南-开源项目的度量标准[译文]">
+                Github开源项目贡献指南-开源项目的度量标准[译文] <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/monkey_logo.jpg"
+                alt="liadbiz" />
+            
+              <p class="site-author-name" itemprop="name">liadbiz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liadbiz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhuhh2@shanghaitech.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么需要行为守则？"><span class="nav-number">1.</span> <span class="nav-text">我为什么需要行为守则？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立行为守则"><span class="nav-number">2.</span> <span class="nav-text">建立行为守则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决定你们如何执行行为守则"><span class="nav-number">3.</span> <span class="nav-text">决定你们如何执行行为守则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行你们的行为守则"><span class="nav-number">4.</span> <span class="nav-text">执行你们的行为守则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜集有关违规的信息"><span class="nav-number">4.1.</span> <span class="nav-text">搜集有关违规的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采取适当的行动"><span class="nav-number">4.2.</span> <span class="nav-text">采取适当的行动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维护者的责任和义务"><span class="nav-number">5.</span> <span class="nav-text">维护者的责任和义务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼓励你们希望看见的行为-🌎"><span class="nav-number">6.</span> <span class="nav-text">鼓励你们希望看见的行为 🌎</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liadbiz</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz',
+        appKey: '33lGH9xlJ9OHVOFzlKcneMml',
+        placeholder: '聊五毛钱的天儿呗',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz", "33lGH9xlJ9OHVOFzlKcneMml");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
