@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5.1.4">
+
+
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="vim," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前几天突然心血来潮，想把经常用的vim弄的漂亮一些，之前就经常看到有把vim作为IDE来用的文章，但是大多是复制别人的配置，也不解释如何做到，让人很没有安全感。于是我从最基本的需求开始，一步一步定制了具备我喜欢的风格，常用功能的快捷键，以及python和javascipt的补全和错误检查，基本满足了日常的需求。这里把改造过程记录下来，供有需求的同学借鉴。 我这里的环境是Ubuntu 16.04,">
+<meta name="keywords" content="vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你看的懂的vim定制指南">
+<meta property="og:url" content="http://liadbiz.github.io/2018/03/17/vim-custimization/index.html">
+<meta property="og:site_name" content="liadbiz&#39;s blog">
+<meta property="og:description" content="前几天突然心血来潮，想把经常用的vim弄的漂亮一些，之前就经常看到有把vim作为IDE来用的文章，但是大多是复制别人的配置，也不解释如何做到，让人很没有安全感。于是我从最基本的需求开始，一步一步定制了具备我喜欢的风格，常用功能的快捷键，以及python和javascipt的补全和错误检查，基本满足了日常的需求。这里把改造过程记录下来，供有需求的同学借鉴。 我这里的环境是Ubuntu 16.04,">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://liadbiz.github.io/images/color_and_font.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/ctrlp.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/lightline.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/undotree.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/Ag.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/nerdtree.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/complete.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/flake.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/tern.png">
+<meta property="og:image" content="http://liadbiz.github.io/images/eslint.png">
+<meta property="og:updated_time" content="2018-03-30T05:31:23.656Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你看的懂的vim定制指南">
+<meta name="twitter:description" content="前几天突然心血来潮，想把经常用的vim弄的漂亮一些，之前就经常看到有把vim作为IDE来用的文章，但是大多是复制别人的配置，也不解释如何做到，让人很没有安全感。于是我从最基本的需求开始，一步一步定制了具备我喜欢的风格，常用功能的快捷键，以及python和javascipt的补全和错误检查，基本满足了日常的需求。这里把改造过程记录下来，供有需求的同学借鉴。 我这里的环境是Ubuntu 16.04,">
+<meta name="twitter:image" content="http://liadbiz.github.io/images/color_and_font.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liadbiz.github.io/2018/03/17/vim-custimization/"/>
+
+
+
+
+
+  <title>你看的懂的vim定制指南 | liadbiz's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">liadbiz's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Explain better</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liadbiz.github.io/2018/03/17/vim-custimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liadbiz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/monkey_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liadbiz's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">你看的懂的vim定制指南</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T22:26:07+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/17/vim-custimization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/17/vim-custimization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/17/vim-custimization/" class="leancloud_visitors" data-flag-title="你看的懂的vim定制指南">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前几天突然心血来潮，想把经常用的vim弄的漂亮一些，之前就经常看到有把vim作为IDE来用的文章，但是大多是复制别人的配置，也不解释如何做到，让人很没有安全感。于是我从最基本的需求开始，一步一步定制了具备我喜欢的风格，常用功能的快捷键，以及python和javascipt的补全和错误检查，基本满足了日常的需求。这里把改造过程记录下来，供有需求的同学借鉴。</p>
+<p>我这里的环境是Ubuntu 16.04, vim 8.0。</p>
+<h3 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h3><p>建议大家不要直接使用别人配置好的版本，因为很多东西都是你不需要的，而且要它设置的快捷键可能并不是你最喜欢的。所以这里我们从白板的vim8.0开始。</p>
+<p>vim8.0是去年出的新版本，可能是受了neovim的刺激，vim才有了十年内的第一个Major release.果然竞争有利于创新啊。</p>
+<p>可以通过添加下面的源来下载最新版本的vim:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:jonathonf/vim</span><br><span class="line">sudo update</span><br><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+<p>下载之后，我们要做的第一件事情就是做基本设置。我分成了几个小部分。</p>
+<ul>
+<li>背景颜色和字体</li>
+<li>空格和Tab</li>
+<li>搜索</li>
+<li>Leader键及常用快捷键</li>
+<li>其他</li>
+</ul>
+<p>所有的设置都是在写在<code>~/.vimrc</code>里面，这是vim启动会自动读取的配置文件。如果你的机器上没有这个文件，可以自己创建一个。</p>
+<p>很多人喜欢把终端的颜色弄成黑色或者深色，但是作为喜欢性冷淡风的我，首先就把背景弄成白色，然后把字体调成我喜欢的<code>Source Code Pro</code>, 窃以为这是最适合代码编辑的字体，中文显示也不错。然后字体宽度设置成semibold，也就是中等粗体，字体大小调成10号，最后显示出来就是前面截图中的样子了。这个调整是通过终端的设置选项完成的。</p>
+<p>具体操作是：terminal–&gt;preferences–&gt;profiles–&gt;edit–&gt;general–&gt;custom font&gt;&gt;Source Code Pro Semibold 10</p>
+<p><img src="/images/color_and_font.png" alt="color and font"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> softtabstop=4  <span class="string">" number of spaces in tab when editing</span></span><br><span class="line"><span class="string">set expandtab       "</span> tabs are spaces</span><br></pre></td></tr></table></figure>
+<p>在编码的习惯中，有一个话题是经常被拿出来讨论，那就缩进的时候到底是用空格还是Tab键，当在我看来，这没什么所谓，反正我是习惯用tab，因为实在懒得按那么多此空格键，但是为了在不同的及其和编辑器中你的代码不会出现缩进乱掉的情况，我们还是把vim中的Tab换成四个空格比较好（如果你喜欢两个或者八个也请按自己的习惯）。</p>
+<p>对于python代码，有更详细一点的设置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">au BufNewFile,BufRead *.py</span><br><span class="line">    \ <span class="built_in">set</span> tabstop=4     |</span><br><span class="line">    \ <span class="built_in">set</span> softtabstop=4     |</span><br><span class="line">    \ <span class="built_in">set</span> shiftwidth=4     |</span><br><span class="line">    \ <span class="built_in">set</span> textwidth=79     |</span><br><span class="line">    \ <span class="built_in">set</span> expandtab     |</span><br><span class="line">    \ <span class="built_in">set</span> autoindent     |</span><br><span class="line">    \ <span class="built_in">set</span> fileformat=unix</span><br></pre></td></tr></table></figure>
+<p><code>tabstop</code>的意思是制表符等价于四个空格，vim默认的好像是8个空格，<code>softtabstop</code>的意思是，当我们按下Tab健的时候插入对应个数的空格，但是会按照<code>tabstop</code>的数值转换哼制表符和剩余个数的空格。比如如果我们这里设置<code>softtabstop</code>是6，那么当我们按下Tab时，就会插入一个制表符和两个空格。<code>shiftwidth</code>是表示自动缩进时所使用的空白长度。<code>expandtab</code>表示把所有的制表符都转变成空格，这样我们每次按下tab，都是插入的四个空格。</p>
+<p><code>textwidth=79</code>表示一行最多79个字符，<code>autoindent</code>表示程序自动缩进，<code>fileformat=unix</code>表示按照unix的文件格式存储。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> showmatch           <span class="string">" highlight matching [&#123;()&#125;]</span></span><br><span class="line"><span class="string">set incsearch           "</span> search as characters are entered</span><br><span class="line"><span class="built_in">set</span> hlsearch            <span class="string">" highlight matches</span></span><br></pre></td></tr></table></figure>
+<p><code>showmatch</code>表示如果光标移动到了成对出现的括号会将对应的另一半也高亮，这对于经常因为少了一个括号debug半天的童鞋来说还是很实在的。<code>incsearch</code>表示搜索的时候根据你键入的字符实时更新搜索结果，因为有时候只需要输入部分字符自己想要的单词就出来了。<code>hlsearch</code>表示高亮搜索结果，这里有一个问题是，搜索结束之后高亮会一直存在，如何关闭高亮会在后面急那个到。</p>
+<p>vim中有一些常用的功能快捷键是不太方便的，我们可以定义一个leader键来统一那些不太方便的快捷键或者命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader=<span class="string">","</span>       <span class="string">" leader is comma</span></span><br><span class="line"><span class="string">"</span> keymap settings</span><br><span class="line"><span class="string">" jo is escape</span></span><br><span class="line"><span class="string">inoremap jo &lt;esc&gt;</span></span><br><span class="line"><span class="string">"</span> move to beginning/end of line</span><br><span class="line">nnoremap B ^</span><br><span class="line">nnoremap E $</span><br><span class="line">nnoremap ,&lt;space&gt; :nohlsearch&lt;CR&gt;      <span class="string">" ,&lt;space&gt; to close search hilight</span></span><br><span class="line"><span class="string">nnoremap j gj</span></span><br><span class="line"><span class="string">nnoremap k gk</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;ev :vsp <span class="variable">$MYVIMRC</span>&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;ez :vsp ~/.zshrc&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;sv :source <span class="variable">$MYVIMRC</span>&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;w  &lt;C-W&gt;&lt;C-K&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;s  &lt;C-W&gt;&lt;C-J&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;a  &lt;C-W&gt;&lt;C-h&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;d  &lt;C-W&gt;&lt;C-l&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;v  :sp&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;h  :vs&lt;CR&gt;</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;q  &lt;C-W&gt;q</span></span><br><span class="line"><span class="string">nnoremap &lt;leader&gt;e  :e</span></span><br></pre></td></tr></table></figure>
+<p>我这里是把leader键设置成了逗号键，也可以设置成空格键，都在比较好按的位置，<code>inoremap jo &lt;esc&gt;</code>的意思是用jo代替esc键，因为一般键盘上esc都是在比较远的位置，不适合作为这么常用的键，有一个问题是党你真的想要输入jo这样的字符组合的时候，你要放慢速度依次按下j和o，不过这样的情况很少见。</p>
+<p>另外，<code>^</code>和<code>$</code>也是两个位置极其不好按的键，我们把他们改成<code>B</code>和<code>E</code>。</p>
+<p>接下来的一行就是将<code>,&lt;space&gt;</code>映射成取消高亮搜索结果。</p>
+<p>再下来的两行<code>nnoremap j gj</code>和<code>nnremap k gk</code>的作用是当某一行太长显示成多行的时候，我们希望上下移动时是以显示的行为单位。</p>
+<p>接下在的三行是简化了平常经常用的编辑vim配置文件和zsh配置文件的按键操作。</p>
+<p>再下来的四行是用<code>&lt;leader&gt;w</code>, <code>&lt;leader&gt;s</code>, <code>&lt;leader&gt;a</code>, <code>&lt;leader&gt;d</code>，来在窗口之间进行上下左右的移动。</p>
+<p><code>&lt;leader&gt;v</code>和<code>&lt;leader&gt;h</code>分别是竖直和水平分屏。</p>
+<p>最后两行是关闭当前窗口和编辑文件。</p>
+<p>最后是一些我不知道归到哪一类的配置，我们就叫其他配置好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" basic config</span></span><br><span class="line"><span class="string">set nocompatible        "</span> close compatible mode</span><br><span class="line">filetype plugin on      <span class="string">" load filetype-specific plugin</span></span><br><span class="line"><span class="string">filetype indent on      "</span> load filetype-specific indent files</span><br><span class="line"><span class="built_in">set</span> relativenumber      <span class="string">" show relative line number</span></span><br><span class="line"><span class="string">set cursorline          "</span> highlight current line</span><br><span class="line"><span class="built_in">set</span> wildmenu            <span class="string">" visual autocomplete for command menu</span></span><br><span class="line"><span class="string">set lazyredraw          "</span> redraw only when we need to.</span><br></pre></td></tr></table></figure>
+<p>这些配置的基本含义我已经写在注释里，有几项还要具体解释一下。</p>
+<p><code>set nocompatible</code>是为了关闭vim处于历史兼容型的考虑而设置的vi模式。而我们一般是不需要的。<br><code>set relativenumber</code>是显示相对行号，对于复制和删除等操作比较方便。<br><code>set wildmenu</code>是在命令烂补全的时候显示所有可补全项，比如我们在<code>:e &lt;TAB&gt;</code>的时候，就会显示出所有文件或目录。<br><code>lazyredraw</code>是出于性能考虑，避免能不必要的重绘。</p>
+<h3 id="插件安装和配置"><a href="#插件安装和配置" class="headerlink" title="插件安装和配置"></a>插件安装和配置</h3><p>vim要好用还依赖于大量的插件，我这里只提到了我会有需求用到的，如果大家还知道不错的插件，可以留言给我。</p>
+<p>第一步我们要安装vim的插件管理器<a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener"><strong>vim-plug</strong></a>，vim的插件管理器很多，我选择目前比较流行的一个，如果你用其他的也没关系，熟手就好。</p>
+<p>安装命令如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.vim</span><br><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure></p>
+<p>安装完之后，我们在根目录创建一个<code>.vim.plug</code>文件，用来放插件相关的代码。然后在<code>~/.vimrc</code>中加入下面的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" use vim plug vim file</span></span><br><span class="line"><span class="string">if filereadable(expand("</span>~/.vimrc.plug<span class="string">"))</span></span><br><span class="line"><span class="string">    source ~/.vimrc.plug</span></span><br><span class="line"><span class="string">endif</span></span><br></pre></td></tr></table></figure>
+<p>然后在<code>.vim-plug</code>中加入下面的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="comment">#begin('~/.vim/plugged')</span></span><br><span class="line"></span><br><span class="line"><span class="string">" List of plugins</span></span><br><span class="line"><span class="string">Plug 'ctrlpvim/ctrlp.vim'</span></span><br><span class="line"><span class="string">Plug 'itchyny/lightline.vim'</span></span><br><span class="line"><span class="string">Plug 'flazz/vim-colorschemes'</span></span><br><span class="line"><span class="string">Plug 'mbbill/undotree'</span></span><br><span class="line"><span class="string">Plug 'rking/ag.vim'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdtree'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdcommenter'</span></span><br><span class="line"><span class="string">Plug 'vim-syntastic/syntastic'</span></span><br><span class="line"><span class="string">Plug 'pangloss/vim-javascript'</span></span><br><span class="line"><span class="string">Plug 'Valloric/YouCompleteMe'</span></span><br><span class="line"><span class="string">Plug 'ternjs/tern_for_vim'</span></span><br><span class="line"><span class="string">Plug 'nvie/vim-flake8'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">call plug#end()</span></span><br></pre></td></tr></table></figure>
+<p>保存该文件 并source一下<code>~/.vimrc</code>。然后用<code>:PlugInstall</code>下载所有插件。</p>
+<p>下面依次简要介绍一下我用的插件。</p>
+<h4 id="Ctrlp"><a href="#Ctrlp" class="headerlink" title="Ctrlp"></a>Ctrlp</h4><p><a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="noopener"> ctrlp </a>是vim中必不可少的一个插件，特别是如果你之前用过sublime的话。这个插件可以用来模糊搜索项目中的文件，或者已经打开的buffer。下面是针对ctrlp的配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;p  :CtrlP&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;b  :CtrlPBuffer&lt;CR&gt;</span><br><span class="line"><span class="built_in">let</span> g:ctrlp_match_window = <span class="string">'bottom,order:ttb'</span></span><br><span class="line"><span class="built_in">let</span> g:ctrlp_switch_buffer = 0</span><br><span class="line"><span class="built_in">let</span> g:ctrlp_working_path_mode = <span class="string">''</span></span><br></pre></td></tr></table></figure>
+<p>前两行是表示用<code>,p</code>来快速搜索文件，<code>,b</code>来快速搜索buffer。</p>
+<p>第三行的意思是将匹配结果在最下方按从上到下的顺序显示。<br>第四行的意思是在当前panel中打开选中的文件。<br>最后一行的意思是，只在当前目录中搜索。</p>
+<p>其他选项可以通过<code>:h ctrlp-options</code>查看。 </p>
+<p>一般的工作流是，用<code>:cd [DIR]</code>切换到我们要工作的项目目录，然后在使用ctrlp打开相应的文件，如果直接使用的话，默认目录是根目录，如果你的机器上文件很多，vim就会卡死。</p>
+<p>参考效果图：</p>
+<p><img src="/images/ctrlp.png" alt="ctrlp.png"></p>
+<h4 id="lightline"><a href="#lightline" class="headerlink" title="lightline"></a>lightline</h4><p><a href="https://github.com/itchyny/lightline.vim" target="_blank" rel="noopener">lightline</a>作用就是在vim底部放一个显示文件名啊，编辑模式啊等等信息的状态栏，其实主要是为了美化作用。</p>
+<p>我的配置是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:lightline = &#123;</span><br><span class="line">      \ <span class="string">'colorscheme'</span>: <span class="string">'wombat'</span>,</span><br><span class="line">      \ <span class="string">'active'</span>: &#123;</span><br><span class="line">      \   <span class="string">'left'</span>: [ [ <span class="string">'mode'</span>, <span class="string">'paste'</span> ],</span><br><span class="line">      \             [ <span class="string">'readonly'</span>, <span class="string">'filename'</span>, <span class="string">'modified'</span>, <span class="string">'helloworld'</span> ] ]</span><br><span class="line">      \ &#125;,</span><br><span class="line">      \ <span class="string">'component'</span>: &#123;</span><br><span class="line">      \   <span class="string">'helloworld'</span>: <span class="string">'I am writing shit...'</span></span><br><span class="line">      \ &#125;,</span><br><span class="line">      \ &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> laststatus=2</span><br></pre></td></tr></table></figure>
+<p>设置的选项参考项目主页，我这里主要设置了一个配色方案是<code>wombat</code>，依然走的是性冷淡风。然后添加了一个组件，写了一行文字，效果可以参见下图。至于为什么<code>set laststatus=2</code>，项目主页上有。</p>
+<p><img src="/images/lightline.png" alt="lightline.png"></p>
+<h4 id="vim-colorschemas"><a href="#vim-colorschemas" class="headerlink" title="vim-colorschemas"></a>vim-colorschemas</h4><p>默认的配色其实也挺好看的，但是看多了也就有点腻，<a href="https://github.com/flazz/vim-colorschemes" target="_blank" rel="noopener">vim-colorschemas</a>自带N种配色方案供你选择，不过去我觉得符合我审美的的并不多，目前在用的是<code>hemisu</code>，效果在之前的截图可以看到。要设置配色方案，只需要加上下面一句即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colorscheme hemisu</span><br></pre></td></tr></table></figure>
+<h4 id="undotree"><a href="#undotree" class="headerlink" title="undotree"></a>undotree</h4><p>很多时候我们会误操作导致删除了什么重要的东西，但是又还没来得及提交到git，这个时候就可以用<a href="https://github.com/mbbill/undotree/" target="_blank" rel="noopener">undotree</a>来动态回滚到之前的每一个操作。</p>
+<p>下面是效果图：</p>
+<p><img src="/images/undotree.png" alt="undotree.png"></p>
+<h4 id="ag-vim"><a href="#ag-vim" class="headerlink" title="ag.vim"></a>ag.vim</h4><p>用linux的童鞋大概都用过grep来查找特定的单词，在编码的过程中，我们经常会需要查找某个函数后者某个变量的位置，但是大多数时候我们都不会记得是在哪个文件，这个时候，就需要一个插件能够在项目文件中查找你想要的单词。</p>
+<p><code>Ag.vim</code>就是用来完成这个工作的，搜索的命令是：<code>:Ag [options] {pattern} [{directory}]</code>，大多数时候我们都不需要用正则表达式，而只是需要搜索一个简单的单词，比如我们现在有一个叫<a href="https://github.com/gaojiuli/xweb" target="_blank" rel="noopener">xweb</a>项目，我们想要在里面搜索<code>import</code>关键字，只需要用命令<code>:Ag import</code>。结果如下图：</p>
+<p><img src="/images/Ag.png" alt="Ag.png"></p>
+<p>另外，我们可以用快捷键简化操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;g  :Ag&lt;space&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Nerdtree"><a href="#Nerdtree" class="headerlink" title="Nerdtree"></a>Nerdtree</h4><p>一般编辑器左侧都会有一个文件目录，切换文件也是用鼠标点击对应文件，在vim中其实我们是不需要目录树的，因为根本用不到鼠标…但是出于美观的考虑，我们可以Nerdtree添加这个功能。</p>
+<p>效果如下：</p>
+<p><img src="/images/nerdtree.png" alt="nerdtree"></p>
+<h4 id="Nerdcommenter"><a href="#Nerdcommenter" class="headerlink" title="Nerdcommenter"></a>Nerdcommenter</h4><p>如果你把vim作为很多语言的编辑器，那么注释就成了一个麻烦，因为不同语言有不同的注释语法，而<a href="https://github.com/scrooloose/nerdcommenter" target="_blank" rel="noopener">nerdcommenter</a>插件就能帮助我们一键轻松注释任何语言的代码片段。</p>
+<p>最常用的两个快捷键是：<code>[count]&lt;leader&gt;cc</code>, <code>[count]&lt;leader&gt;c&lt;space&gt;</code>，命令中的count是指从光标所在行之后的行数，，也可以用visual模式选中，不提供count这个参数。</p>
+<h4 id="python补全和错误检查"><a href="#python补全和错误检查" class="headerlink" title="python补全和错误检查"></a>python补全和错误检查</h4><p>平时我最常用的语言就是Python和javascript，因此我这里就介绍一下如何在vim中对python补全和错误检查。</p>
+<p>补全的话就要安装可以和IDE的补全效果匹敌的<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="noopener">YouCompleteMe</a>了，前面已经安装过，我们只需要做一些配置即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:ycm_python_binary_path = <span class="string">'python'</span></span><br><span class="line">nnoremap &lt;leader&gt;gl :YcmCompleter GoToDeclaration&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;gf :YcmCompleter GoToDefinition&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;gg :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<p>第一行配置的意思是指定python的位置，这里写python的目的是在使用虚环境的时候python版本也是对应版本。</p>
+<p>后面三行是跳转到生命，跳转到定义，跳转到定义或者声明的快捷键。</p>
+<p>下面是补全的效果图，至于跳转需要Gif展示，我这里就不放出来了。</p>
+<p><img src="/images/complete.png" alt="complete.png"></p>
+<p>接下来是语法检查，首先安装插件<a href="https://github.com/vim-syntastic/syntastic" target="_blank" rel="noopener">Syntastic</a>，该插件为多种语言提供语法检查前端，然后安装python的语法检查后端插件，你可以根据自己的需求安装多种后端，我这里安装的是<a href="https://github.com/nvie/vim-flake8" target="_blank" rel="noopener">vim-flake8</a>。</p>
+<p>安装好之后，打开python文件就会弹出不符合规范的错误列表。效果图如下：</p>
+<p><img src="/images/flake.png" alt="flake.png"></p>
+<p>如果你的屏幕比较小，不希望localtion list总是出现，你可以定义快捷键调节其显示和关闭状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;l  :lclose&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;L  :Errors&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Javascript补全和语法检查"><a href="#Javascript补全和语法检查" class="headerlink" title="Javascript补全和语法检查"></a>Javascript补全和语法检查</h4><p>前面我们已经安装了YCM，要对javascript补全, 只需要安装tern_for_vim插件即可，（用tern作为补全引擎）。</p>
+<p>我们可以打开vuejs的源代码试一试，效果图如下：</p>
+<p><img src="/images/tern.png" alt="tern.png"></p>
+<p>语法检查的话类似于python，我们需要配置使用哪一种javascript语法检查的后端，不同于python的是，我们的后端不需要下载，因为现在集合每个项目都会在<code>node_modules</code>中下载语法检查的包，我们直接使用即可。在配置文件中，我们需要声明使用哪种检查器，你可以根据你的实际情况来，我这里使用的是比较流行的<a href="https://eslint.org/" target="_blank" rel="noopener">eslint</a>。然后增加一个开始检查的命令。即配置如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_javascript_checkers=[<span class="string">'eslint'</span>]</span><br><span class="line"><span class="built_in">let</span> <span class="variable">$PATH</span> .= <span class="string">':/home/liadbiz/.nvm/versions/node/v8.1.3/bin:/usr/local/bin:/opt/node-v6.9.2-linux-x64/bin'</span></span><br></pre></td></tr></table></figure>
+<p>第二行是因为vim中的$PATH变量里面没有我的Eslint所在路径，所以在这里加上。</p>
+<p>我们可以在vue项目源码中测试一下，效果图如下：</p>
+<p><img src="/images/eslint.png" alt="eslint.png"></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>到这里我们的vim就差不多是一个功能比较齐全的IDE了，而且重点是，可以完全不用鼠标操作，既避免了鼠标手，又提高了效率。</p>
+<p>如果有什么疑问，欢迎留言～～</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>有钱的捧个钱场，没钱的捧个人场</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="liadbiz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vim/" rel="tag"># vim</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/01/python-tutorial-1-01-md/" rel="next" title="python系列教程之基础特性第一篇-基本数据类型">
+                <i class="fa fa-chevron-left"></i> python系列教程之基础特性第一篇-基本数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/26/better-hexo-blog/" rel="prev" title="基于hexo的next主题博客完善攻略">
+                基于hexo的next主题博客完善攻略 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/monkey_logo.jpg"
+                alt="liadbiz" />
+            
+              <p class="site-author-name" itemprop="name">liadbiz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liadbiz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhuhh2@shanghaitech.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装和配置"><span class="nav-number">2.</span> <span class="nav-text">插件安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrlp"><span class="nav-number">2.1.</span> <span class="nav-text">Ctrlp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightline"><span class="nav-number">2.2.</span> <span class="nav-text">lightline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-colorschemas"><span class="nav-number">2.3.</span> <span class="nav-text">vim-colorschemas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undotree"><span class="nav-number">2.4.</span> <span class="nav-text">undotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ag-vim"><span class="nav-number">2.5.</span> <span class="nav-text">ag.vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdtree"><span class="nav-number">2.6.</span> <span class="nav-text">Nerdtree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdcommenter"><span class="nav-number">2.7.</span> <span class="nav-text">Nerdcommenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python补全和错误检查"><span class="nav-number">2.8.</span> <span class="nav-text">python补全和错误检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript补全和语法检查"><span class="nav-number">2.9.</span> <span class="nav-text">Javascript补全和语法检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liadbiz</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz',
+        appKey: '33lGH9xlJ9OHVOFzlKcneMml',
+        placeholder: '聊五毛钱的天儿呗',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz", "33lGH9xlJ9OHVOFzlKcneMml");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
