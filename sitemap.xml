@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liadbiz.github.io/python-tutorial-1-01-md/</loc>
+    
+    <lastmod>2018-03-30T12:56:26.346Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liadbiz.github.io/better-hexo-blog/</loc>
+    
+    <lastmod>2018-03-30T12:55:25.899Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liadbiz.github.io/vim-custimization/</loc>
+    
+    <lastmod>2018-03-30T12:55:17.706Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liadbiz.github.io/about/index.html</loc>
     
     <lastmod>2018-03-30T07:02:23.393Z</lastmod>
@@ -51,28 +72,14 @@
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/vim-custimization/</loc>
-    
-    <lastmod>2018-03-30T05:31:23.656Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liadbiz.github.io/python-tutorial-1-01-md/</loc>
-    
-    <lastmod>2018-03-30T05:31:23.655Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
     
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
+    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
     
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     
@@ -138,13 +145,6 @@
     <loc>http://liadbiz.github.io/github-open-source-guide-01/</loc>
     
     <lastmod>2018-03-30T05:31:23.642Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liadbiz.github.io/better-hexo-blog/</loc>
-    
-    <lastmod>2018-03-30T05:31:23.641Z</lastmod>
     
   </url>
   

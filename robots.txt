@@ -11,7 +11,3 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-
-Sitemap: http://liadbiz.github.io/sitemap.xml
-Sitemap: http://liadbiz.github.io/baidusitemap.xml
-
