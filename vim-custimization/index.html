@@ -78,13 +78,13 @@
 
 
 
-<meta name="description" content="如何一步步把vim配置成可以用于多语言开发的ide。告诉你如何设置快捷键。">
+<meta name="description" content="如何一步步把vim配置成可以用于多语言开发的ide以及设置好用的快捷键。">
 <meta name="keywords" content="vim customizatiπon">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你看的懂的vim定制指南">
 <meta property="og:url" content="http://liadbiz.github.io/vim-custimization/index.html">
 <meta property="og:site_name" content="liadbiz&#39;s blog">
-<meta property="og:description" content="如何一步步把vim配置成可以用于多语言开发的ide。告诉你如何设置快捷键。">
+<meta property="og:description" content="如何一步步把vim配置成可以用于多语言开发的ide以及设置好用的快捷键。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/color_and_font.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/ctrlp.png">
@@ -96,10 +96,11 @@
 <meta property="og:image" content="http://liadbiz.github.io/images/flake.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/tern.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/eslint.png">
-<meta property="og:updated_time" content="2018-03-30T12:55:17.706Z">
+<meta property="og:image" content="http://liadbiz.github.io/images/ale.gif">
+<meta property="og:updated_time" content="2018-04-23T04:12:05.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你看的懂的vim定制指南">
-<meta name="twitter:description" content="如何一步步把vim配置成可以用于多语言开发的ide。告诉你如何设置快捷键。">
+<meta name="twitter:description" content="如何一步步把vim配置成可以用于多语言开发的ide以及设置好用的快捷键。">
 <meta name="twitter:image" content="http://liadbiz.github.io/images/color_and_font.png">
 
 
@@ -370,7 +371,7 @@
 
           
               <div class="post-description">
-                  如何一步步把vim配置成可以用于多语言开发的ide。告诉你如何设置快捷键。
+                  如何一步步把vim配置成可以用于多语言开发的ide以及设置好用的快捷键。
               </div>
           
 
@@ -433,7 +434,7 @@
 <p>安装完之后，我们在根目录创建一个<code>.vim.plug</code>文件，用来放插件相关的代码。然后在<code>~/.vimrc</code>中加入下面的代码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" use vim plug vim file</span></span><br><span class="line"><span class="string">if filereadable(expand("</span>~/.vimrc.plug<span class="string">"))</span></span><br><span class="line"><span class="string">    source ~/.vimrc.plug</span></span><br><span class="line"><span class="string">endif</span></span><br></pre></td></tr></table></figure>
 <p>然后在<code>.vim-plug</code>中加入下面的代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="comment">#begin('~/.vim/plugged')</span></span><br><span class="line"></span><br><span class="line"><span class="string">" List of plugins</span></span><br><span class="line"><span class="string">Plug 'ctrlpvim/ctrlp.vim'</span></span><br><span class="line"><span class="string">Plug 'itchyny/lightline.vim'</span></span><br><span class="line"><span class="string">Plug 'flazz/vim-colorschemes'</span></span><br><span class="line"><span class="string">Plug 'mbbill/undotree'</span></span><br><span class="line"><span class="string">Plug 'rking/ag.vim'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdtree'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdcommenter'</span></span><br><span class="line"><span class="string">Plug 'vim-syntastic/syntastic'</span></span><br><span class="line"><span class="string">Plug 'pangloss/vim-javascript'</span></span><br><span class="line"><span class="string">Plug 'Valloric/YouCompleteMe'</span></span><br><span class="line"><span class="string">Plug 'ternjs/tern_for_vim'</span></span><br><span class="line"><span class="string">Plug 'nvie/vim-flake8'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">call plug#end()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">call plug<span class="comment">#begin('~/.vim/plugged')</span></span><br><span class="line"></span><br><span class="line"><span class="string">" List of plugins</span></span><br><span class="line"><span class="string">Plug 'ctrlpvim/ctrlp.vim'</span></span><br><span class="line"><span class="string">Plug 'itchyny/lightline.vim'</span></span><br><span class="line"><span class="string">Plug 'flazz/vim-colorschemes'</span></span><br><span class="line"><span class="string">Plug 'mbbill/undotree'</span></span><br><span class="line"><span class="string">Plug 'rking/ag.vim'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdtree'</span></span><br><span class="line"><span class="string">Plug 'scrooloose/nerdcommenter'</span></span><br><span class="line"><span class="string"># Plug 'vim-syntastic/syntastic'</span></span><br><span class="line"><span class="string">Plug 'w0rp/ale'</span></span><br><span class="line"><span class="string">Plug 'pangloss/vim-javascript'</span></span><br><span class="line"><span class="string">Plug 'Valloric/YouCompleteMe'</span></span><br><span class="line"><span class="string">Plug 'ternjs/tern_for_vim'</span></span><br><span class="line"><span class="string">Plug 'nvie/vim-flake8'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">call plug#end()</span></span><br></pre></td></tr></table></figure>
 <p>保存该文件 并source一下<code>~/.vimrc</code>。然后用<code>:PlugInstall</code>下载所有插件。</p>
 <p>下面依次简要介绍一下我用的插件。</p>
 <h4 id="Ctrlp"><a href="#Ctrlp" class="headerlink" title="Ctrlp"></a>Ctrlp</h4><p><a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="noopener"> ctrlp </a>是vim中必不可少的一个插件，特别是如果你之前用过sublime的话。这个插件可以用来模糊搜索项目中的文件，或者已经打开的buffer。下面是针对ctrlp的配置。</p>
@@ -468,10 +469,10 @@
 <p>补全的话就要安装可以和IDE的补全效果匹敌的<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="noopener">YouCompleteMe</a>了，前面已经安装过，我们只需要做一些配置即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:ycm_python_binary_path = <span class="string">'python'</span></span><br><span class="line">nnoremap &lt;leader&gt;gl :YcmCompleter GoToDeclaration&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;gf :YcmCompleter GoToDefinition&lt;CR&gt;</span><br><span class="line">nnoremap &lt;leader&gt;gg :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;</span><br></pre></td></tr></table></figure>
 <p>第一行配置的意思是指定python的位置，这里写python的目的是在使用虚环境的时候python版本也是对应版本。</p>
-<p>后面三行是跳转到生命，跳转到定义，跳转到定义或者声明的快捷键。</p>
+<p>后面三行是跳转到声明，跳转到定义，跳转到定义或者声明的快捷键。</p>
 <p>下面是补全的效果图，至于跳转需要Gif展示，我这里就不放出来了。</p>
 <p><img src="/images/complete.png" alt="complete.png"></p>
-<p>接下来是语法检查，首先安装插件<a href="https://github.com/vim-syntastic/syntastic" target="_blank" rel="noopener">Syntastic</a>，该插件为多种语言提供语法检查前端，然后安装python的语法检查后端插件，你可以根据自己的需求安装多种后端，我这里安装的是<a href="https://github.com/nvie/vim-flake8" target="_blank" rel="noopener">vim-flake8</a>。</p>
+<p><del>接下来是语法检查，首先安装插件<a href="https://github.com/vim-syntastic/syntastic" target="_blank" rel="noopener">Syntastic</a>，该插件为多种语言提供语法检查前端</del>，然后安装python的语法检查后端插件，你可以根据自己的需求安装多种后端，我这里安装的是<a href="https://github.com/nvie/vim-flake8" target="_blank" rel="noopener">vim-flake8</a>。</p>
 <p>安装好之后，打开python文件就会弹出不符合规范的错误列表。效果图如下：</p>
 <p><img src="/images/flake.png" alt="flake.png"></p>
 <p>如果你的屏幕比较小，不希望localtion list总是出现，你可以定义快捷键调节其显示和关闭状态。</p>
@@ -479,13 +480,21 @@
 <h4 id="Javascript补全和语法检查"><a href="#Javascript补全和语法检查" class="headerlink" title="Javascript补全和语法检查"></a>Javascript补全和语法检查</h4><p>前面我们已经安装了YCM，要对javascript补全, 只需要安装tern_for_vim插件即可，（用tern作为补全引擎）。</p>
 <p>我们可以打开vuejs的源代码试一试，效果图如下：</p>
 <p><img src="/images/tern.png" alt="tern.png"></p>
-<p>语法检查的话类似于python，我们需要配置使用哪一种javascript语法检查的后端，不同于python的是，我们的后端不需要下载，因为现在集合每个项目都会在<code>node_modules</code>中下载语法检查的包，我们直接使用即可。在配置文件中，我们需要声明使用哪种检查器，你可以根据你的实际情况来，我这里使用的是比较流行的<a href="https://eslint.org/" target="_blank" rel="noopener">eslint</a>。然后增加一个开始检查的命令。即配置如下：</p>
+<p>语法检查的话类似于python，我们需要配置使用哪一种javascript语法检查的后端，不同于python的是，我们的后端不需要下载，因为现在集合每个项目都会在<code>node_modules</code>中下载语法检查的包，我们直接使用即可。在配置文件中，我们需要声明使用哪种检查器，你可以根据你的实际情况来，我这里使用的是比较流行的<a href="https://eslint.org/" target="_blank" rel="noopener">eslint</a>。</p>
+<p>~~然后增加一个开始检查的命令。即配置如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> g:syntastic_javascript_checkers=[<span class="string">'eslint'</span>]</span><br><span class="line"><span class="built_in">let</span> <span class="variable">$PATH</span> .= <span class="string">':/home/liadbiz/.nvm/versions/node/v8.1.3/bin:/usr/local/bin:/opt/node-v6.9.2-linux-x64/bin'</span></span><br></pre></td></tr></table></figure>
 <p>第二行是因为vim中的$PATH变量里面没有我的Eslint所在路径，所以在这里加上。</p>
-<p>我们可以在vue项目源码中测试一下，效果图如下：</p>
+<p>~~<br>我们可以在vue项目源码中测试一下，效果图如下：</p>
 <p><img src="/images/eslint.png" alt="eslint.png"></p>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>到这里我们的vim就差不多是一个功能比较齐全的IDE了，而且重点是，可以完全不用鼠标操作，既避免了鼠标手，又提高了效率。</p>
 <p>如果有什么疑问，欢迎留言～～</p>
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><h4 id="将syntastic替换为ale-2018-4-22"><a href="#将syntastic替换为ale-2018-4-22" class="headerlink" title="将syntastic替换为ale. 2018-4-22"></a>将syntastic替换为ale. 2018-4-22</h4><p>使用systastic为python做错误检查的时候发现每次保存文件都很慢，google发现了另一个类似的插件<a href="https://github.com/w0rp/ale" target="_blank" rel="noopener">ale</a>，支持vim8的异步特性，使用该插件只需要在<code>~/.vimrc.plug</code>中加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">'w0rp/ale'</span></span><br></pre></td></tr></table></figure>
+<p>然后在<code>~/.vimrc</code>中增加配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">" ale settings</span></span><br><span class="line"><span class="string">"</span><span class="built_in">let</span> g:ale_set_loclist = 0</span><br><span class="line"><span class="built_in">let</span> g:ale_set_quickfix = 1</span><br><span class="line"><span class="built_in">let</span> g:ale_open_list = 1 </span><br><span class="line"><span class="string">" python checker</span></span><br><span class="line"><span class="string">let g:ale_fixers = &#123;</span></span><br><span class="line"><span class="string">\   'javascript': ['standard'],</span></span><br><span class="line"><span class="string">\   'python': ['pylint']</span></span><br><span class="line"><span class="string">\&#125;</span></span><br></pre></td></tr></table></figure>
+<p>使用效果如下图，个人感觉体验要比<code>syntastic</code>好很多。</p>
+<p><img src="/images/ale.gif" alt="ale.gif"></p>
+<p>重新换了一个配色, 估计不久又会换。</p>
 
       
     </div>
@@ -707,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装和配置"><span class="nav-number">2.</span> <span class="nav-text">插件安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrlp"><span class="nav-number">2.1.</span> <span class="nav-text">Ctrlp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightline"><span class="nav-number">2.2.</span> <span class="nav-text">lightline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-colorschemas"><span class="nav-number">2.3.</span> <span class="nav-text">vim-colorschemas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undotree"><span class="nav-number">2.4.</span> <span class="nav-text">undotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ag-vim"><span class="nav-number">2.5.</span> <span class="nav-text">ag.vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdtree"><span class="nav-number">2.6.</span> <span class="nav-text">Nerdtree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdcommenter"><span class="nav-number">2.7.</span> <span class="nav-text">Nerdcommenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python补全和错误检查"><span class="nav-number">2.8.</span> <span class="nav-text">python补全和错误检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript补全和语法检查"><span class="nav-number">2.9.</span> <span class="nav-text">Javascript补全和语法检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装和配置"><span class="nav-number">2.</span> <span class="nav-text">插件安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrlp"><span class="nav-number">2.1.</span> <span class="nav-text">Ctrlp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightline"><span class="nav-number">2.2.</span> <span class="nav-text">lightline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-colorschemas"><span class="nav-number">2.3.</span> <span class="nav-text">vim-colorschemas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undotree"><span class="nav-number">2.4.</span> <span class="nav-text">undotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ag-vim"><span class="nav-number">2.5.</span> <span class="nav-text">ag.vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdtree"><span class="nav-number">2.6.</span> <span class="nav-text">Nerdtree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdcommenter"><span class="nav-number">2.7.</span> <span class="nav-text">Nerdcommenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python补全和错误检查"><span class="nav-number">2.8.</span> <span class="nav-text">python补全和错误检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript补全和语法检查"><span class="nav-number">2.9.</span> <span class="nav-text">Javascript补全和语法检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新日志"><span class="nav-number">4.</span> <span class="nav-text">更新日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将syntastic替换为ale-2018-4-22"><span class="nav-number">4.1.</span> <span class="nav-text">将syntastic替换为ale. 2018-4-22</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -87,7 +87,7 @@
 <meta property="og:description" content="python的基本数据类型">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/life_is_short_you_need_python.jpg">
-<meta property="og:updated_time" content="2018-03-30T12:56:26.346Z">
+<meta property="og:updated_time" content="2018-04-19T09:23:31.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python系列教程之基础特性第一篇-基本数据类型">
 <meta name="twitter:description" content="python的基本数据类型">
@@ -380,20 +380,21 @@
       
         <p>python, 是最近几年非常非常流行的一门编程语言, 简单易用的语法和丰富的库让它成为几乎所有领域的开发首选. 只要是将来想从事编程相关的工作, 尤其是想要在数据分析和机器学习领域混口饭吃的同学, 迟早都是要学学python的.</p>
 <p>python是Guido Van Rossum在1989年圣诞节在家里打发时间(反正我是不会用写代码打发时间)而编写的用来改善ABC缺点的编程语言, 至于为什么最初取名叫Python其实和它现在的logo(一条可爱的蟒蛇)并没有关系, 只是因为作者喜欢一个叫Monty Python’s的英国喜剧团体. </p>
-<p>相信大多数想来学学python的同学都是因为在网上看到有人说”人生苦短,我用python”的吧, 就好像我看到很多人说vim是最好的编辑器就想去学学vim. 最初这句话是 Bruce Eckel说的, 英文原文是”life is short, you need python”, 你可能没听说过这个人, 但是你大概听说过它写的书, &lt;<thinking in="" c++="">&gt;和&lt;<thinking in="" java="">&gt;都是出自于他手, 也都是非常经典的作品. 因为其语法设计的原因, python对于小白来说非常友好,所以对于想要迅速完成某个任务的人来说, python可以说是最好上手的.</thinking></thinking></p>
+<p>相信大多数想来学学python的同学都是因为在网上看到有人说”人生苦短,我用python”的吧, 就好像我看到很多人说vim是最好的编辑器就想去学学vim. 最初这句话是 Bruce Eckel说的, 英文原文是”life is short, you need python”, 你可能没听说过这个人, 但是你大概听说过它写的书, <strong>Thinking in c++</strong>和<strong>Thinking in java</strong>都是出自于他手, 也都是非常经典的作品. 因为其语法设计的原因, python对于小白来说非常友好,所以对于想要迅速完成某个任务的人来说, python可以说是最好上手的.</p>
 <p><img src="/images/life_is_short_you_need_python.jpg" alt="人生苦短,我用python"></p>
 <p>当然啦, 虽然是简单易学, 但是想要掌握python的精髓和哲学, 还是需要长时间的使用和练习. 这个系列的教程, 我想达到的目的呢, 一是重新回顾一下python的基础,而是给异地的女朋友写一个比较清楚的中文教程, 再者就是让对python没有了解但是想了解和已经了解但是了解的不多的同学能够对python的各个方面都有一个比较清楚的认识, 知道遇到一个问题如何用pythonic的方式思考和解决.当然啦,我也是一边学一边写, 如果有觉的我写的不对的地方还请大佬指出.</p>
 <p>python和编辑器的安装我就不说了, 大家根据的操作系统和喜好安装就好. 整个大概会分为以下几个部分:</p>
 <ul>
-<li>基础特性 + 高级特性</li>
+<li>基础特性</li>
 <li>函数</li>
 <li>内置函数</li>
 <li>函数式编程</li>
 <li>类和对象</li>
 <li>面向对象编程</li>
+<li>高级特性</li>
 <li>使用模块和发布模块</li>
 <li>内置模块</li>
-<li>第三方模块</li>
+<li>常用第三方模块</li>
 <li>测试和调试</li>
 <li>网络应用</li>
 <li>网络应用实战</li>
@@ -450,7 +451,7 @@
 <p>下面再举一个例子，还是班上所有人的年龄，这次我们想要找出偶数年龄。</p>
 <p>首先用for循环的思路：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">[19, 18, 20, 19, 18]          </span><br><span class="line">&gt;&gt;&gt; even_ages = []            </span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> i <span class="keyword">in</span> ages:            </span><br><span class="line">...    <span class="keyword">if</span> i % 2 == 0:         </span><br><span class="line">...        even_ages.append(i)</span><br><span class="line">...                           </span><br><span class="line">&gt;&gt;&gt; even_ages                 </span><br><span class="line">[18, 20, 18]</span><br></pre></td></tr></table></figure>
-<p>简介一点的方式：</p>
+<p>简洁一点的方式：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; even_ages = [i <span class="keyword">for</span> i <span class="keyword">in</span> ages <span class="keyword">if</span> i % 2 == 0]</span><br><span class="line">&gt;&gt;&gt; even_ages</span><br><span class="line">[18, 20, 18]</span><br></pre></td></tr></table></figure>
 <p>通过上面的两个例子我们可以总结，列表推导的一般组成是：中括号，然后里面包含一个表达式，紧跟着一个for循环，然后还有零个或多个for循环或者if语句。</p>
 <h4 id="del关键字"><a href="#del关键字" class="headerlink" title="del关键字"></a>del关键字</h4><p>del关键字用来删除列表中的某个元素或者删除整个列表，下面是使用示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">[19, 18, 20, 19, 18]          </span><br><span class="line">&gt;&gt;&gt; del ages[0]               </span><br><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">[18, 20, 19, 18]              </span><br><span class="line">&gt;&gt;&gt; del ages                  </span><br><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">Traceback (most recent call last):                          </span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line 1, <span class="keyword">in</span> &lt;module&gt;                       </span><br><span class="line">NameError: name <span class="string">'ages'</span> is not defined</span><br></pre></td></tr></table></figure></p>

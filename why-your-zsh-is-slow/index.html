@@ -78,20 +78,20 @@
 
 
 
-<meta name="description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 123export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(py">
+<meta name="description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 12export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(pye">
 <meta name="keywords" content="zsh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决zsh中运行ls命令后刷新很慢的问题">
 <meta property="og:url" content="http://liadbiz.github.io/why-your-zsh-is-slow/index.html">
 <meta property="og:site_name" content="liadbiz&#39;s blog">
-<meta property="og:description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 123export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(py">
+<meta property="og:description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 12export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(pye">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/slowls.gif">
 <meta property="og:image" content="http://liadbiz.github.io/images/fastls.gif">
-<meta property="og:updated_time" content="2018-03-30T05:31:23.657Z">
+<meta property="og:updated_time" content="2018-04-12T11:48:40.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决zsh中运行ls命令后刷新很慢的问题">
-<meta name="twitter:description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 123export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(py">
+<meta name="twitter:description" content="给新电脑美化终端的时候发现，装了zsh之后，每次ls之后刷新出来都要等个一两秒，实在是不能忍。  开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对pyenv-virtualenv也就是python虚拟环境相的配置。 12export PATH=&quot;/home/liadbiz/.pyenv/bin:$PATH&quot;eval &quot;$(pye">
 <meta name="twitter:image" content="http://liadbiz.github.io/images/slowls.gif">
 
 
@@ -356,7 +356,7 @@
         <p>给新电脑美化终端的时候发现，装了zsh之后，每次<code>ls</code>之后刷新出来都要等个一两秒，实在是不能忍。</p>
 <p><img src="/images/slowls.gif" alt="很慢的zsh"></p>
 <p>开始以为是买到了假电脑，后来觉得可能是zsh插件装太多了，最后终于找到关键所在。因为是复制的之前机器上的配置，有一段对<code>pyenv-virtualenv</code>也就是python虚拟环境相的配置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/home/liadbiz/.pyenv/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv init -)</span>"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv virtualenv-init -)</span>"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/home/liadbiz/.pyenv/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv virtualenv-init -)</span>"</span></span><br></pre></td></tr></table></figure>
 <p>删掉之后就好了。和终端的速度相比，这个其实可有可无。然后我们的zsh速度就正常了。</p>
 <p><img src="/images/fastls.gif" alt="很快的zsh"></p>
 
