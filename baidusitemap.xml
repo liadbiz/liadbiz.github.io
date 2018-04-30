@@ -4,8 +4,8 @@
 
     
   <url>
-    <loc>http://liadbiz.github.io/python-tutorial-1-01-md/</loc>
-    <lastmod>2018-04-30T13:27:42.051Z</lastmod>
+    <loc>http://liadbiz.github.io/python-tutorial-1-01/</loc>
+    <lastmod>2018-04-30T13:47:04.238Z</lastmod>
     <data>
         <display>
         <title>python系列教程之基础特性第一篇-数据类型</title>
@@ -129,14 +129,14 @@
 
     
   <url>
-    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     <data>
         <display>
-        <title>每日一译系列-模块化css怎么玩(译文)</title>
-        <pubTime>2017-04-11T02:56:34.000Z</pubTime>
+        <title>Github开源项目贡献指南-开源项目的度量标准[译文]</title>
+        <pubTime>2017-02-17T14:44:02.000Z</pubTime>
         
-        <tag>css-modules</tag>
+        <tag>github</tag>
          
          
            
@@ -149,14 +149,14 @@
 
     
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
+    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     <data>
         <display>
-        <title>Github开源项目贡献指南-开源项目的度量标准[译文]</title>
-        <pubTime>2017-02-17T14:44:02.000Z</pubTime>
+        <title>每日一译系列-模块化css怎么玩(译文)</title>
+        <pubTime>2017-04-11T02:56:34.000Z</pubTime>
         
-        <tag>github</tag>
+        <tag>css-modules</tag>
          
          
            
@@ -269,11 +269,11 @@
 
     
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-04/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-03/</loc>
     <lastmod>2018-03-30T05:31:23.644Z</lastmod>
     <data>
         <display>
-        <title>Github开源项目贡献指南-创建开放的社区[译文]</title>
+        <title>Github开源项目贡献指南-找到你的用户[译文]</title>
         <pubTime>2017-02-17T14:44:02.000Z</pubTime>
         
         <tag>github</tag>
@@ -289,11 +289,11 @@
 
     
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-03/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-04/</loc>
     <lastmod>2018-03-30T05:31:23.644Z</lastmod>
     <data>
         <display>
-        <title>Github开源项目贡献指南-找到你的用户[译文]</title>
+        <title>Github开源项目贡献指南-创建开放的社区[译文]</title>
         <pubTime>2017-02-17T14:44:02.000Z</pubTime>
         
         <tag>github</tag>
