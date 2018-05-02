@@ -87,7 +87,7 @@
 <meta property="og:description" content="python的基本数据类型">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/life_is_short_you_need_python.jpg">
-<meta property="og:updated_time" content="2018-04-30T13:47:04.238Z">
+<meta property="og:updated_time" content="2018-05-01T12:33:41.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python系列教程之基础特性第一篇-数据类型">
 <meta name="twitter:description" content="python的基本数据类型">
@@ -403,7 +403,14 @@
 <li>机器学习</li>
 <li>机器学习实战</li>
 </ul>
-<p>每篇教程中的代码都是在python3.6的环境下测试过的, 建议大家也直接使用python3。如果你们有不同的结果, 应该是我的笔误, 烦请告知我。可能我会不自觉的省略一些我认为你们知道但是你们不知道的内容。如果有不清楚的地方也烦请告知我。每一节的代码我都会写在<a href="http://jupyter.org/" target="_blank" rel="noopener">jupyter notebook</a>，方便大家练习。</p>
+<p>有几点问题先提前声明一下：</p>
+<ul>
+<li>文章内容有参考网上资料，如果你有错误或者侵权的地方，烦请告知我。</li>
+<li>每篇教程中的代码都是在python3.6的环境下测试过的, 建议大家也直接使用python3。如果你们有不同的结果, 应该是我的笔误, 烦请告知我。</li>
+<li>可能我会不自觉的省略一些我认为你们知道但是你们不知道的内容。如果有不清楚的地方，烦请告知我。</li>
+<li>某些名词我觉得翻译成中文表达不是很好我就直接用的英文，如果你觉得某个中文翻译比英文表达要好，烦请告知我。</li>
+<li>每一节的代码我都会写在<a href="http://jupyter.org/" target="_blank" rel="noopener">jupyter notebook</a>，方便大家练习。如果大家觉得有比较好的代码示例，烦请告知我。</li>
+</ul>
 <p>每篇文章的长度尽量不会写太长方便大家阅读. 如果能够帮助到你们学习python那是最好啦~</p>
 <h2 id="基础特性"><a href="#基础特性" class="headerlink" title="基础特性"></a>基础特性</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>在编程语言中，变量是存储单个数据的基本单位，比如最简单的正数和字符串，学过c/c++的同学知道，声明一个变量的时候同时需要指定变量的类型，但是在python中，我们不需要这样，这是诸如python的<strong>动态类型</strong>语言拥有的特性，与之相反，诸如c/c++, java之类的语言，属于静态类型语言，在编译期间就需要确定数据类型。比如下面的代码:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
@@ -412,15 +419,29 @@
 <p>再者，python的程序是可以在运行期间改变其结构的。可以引进新的函数，也可以删除已有的函数，具有这种特性的语言叫做动态语言。</p>
 <p>因此，python是一种动态类型，强类型的动态语言。</p>
 <p>这种语言的运行效率相比于c/c++而言是很慢的，但是写起来可以说是非常舒服。语言本身决定了其用处，那么python必然是用在对速度要求不是那么高的地方，因此既然如果你需要用到python，那么就不用考虑运行速度之类的问题。</p>
+<h4 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h4><p>对于我来说，人生的两大难题，一个是中午吃什么，一个是给变量命名。给变量命名看似很不起眼，实际上决定了阅读你代码的人或者一周后的你自己会不会骂你是傻逼。</p>
+<p>在给变量起名字方面，我们的祖先已经总结出一套实用的规则，一般来讲，我们取的名字要是<strong>meaningful</strong>的，也就是要让人看到名字就知道是拿来干嘛的。具体来讲，一个变量由几个名词或者形容词组成，遵循从具体到宽泛的原则，连接方式有<strong>camelcase</strong>和<strong>snakecase</strong>两种，在python中，除了类的名字遵循<strong>camelcase</strong>之外，其余都是遵循<strong>snakecase</strong>，下面是一个合理的变量名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top_student_name</span><br></pre></td></tr></table></figure>
+<p>除了变量名，还有类名，函数名等等的规范，大家可以查看<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">pep</a>。</p>
 <h3 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h3><p>一段程序, 实际上就是对一定的输入进行某种操作, 得到我们想要的输出. 因为处理对象的的存储方式和表达特征不同, 我们要给不同的数据赋予不同的类型, 以此来方便处理。</p>
-<p>在python中有6个内置的标准数据类型。分别是：</p>
+<p>在python中主要有以下集中数据类型：</p>
 <ul>
-<li>Number  数字</li>
-<li>String  字符串</li>
-<li>List  列表</li>
-<li>Tuple  元组</li>
-<li>Sets 集合</li>
-<li>Dictionary 字典</li>
+<li>numerics</li>
+<li>sequences</li>
+<li>mappings</li>
+<li>classes</li>
+<li>instances</li>
+<li>exceptions</li>
+</ul>
+<p>这是比较宽泛的分类，在这篇文章中我们不会注意解释，只会了解几个常用的比较简单的数据类型。即：</p>
+<ul>
+<li>Number</li>
+<li>String </li>
+<li>List</li>
+<li>Range </li>
+<li>Tuple</li>
+<li>Sets </li>
+<li>Dictionary</li>
 </ul>
 <p>需要注意的是，在这六种数据类型中，</p>
 <ul>
@@ -428,7 +449,15 @@
 <li>可变的有两个：Lists, Dictionary</li>
 </ul>
 <p>所谓不可变就是一旦定义就不可改变，反之为可变。具体使用那种要根据场景来。</p>
-<h4 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h4><p>python支持多种数据类型, 首先是常用的数字, 有整数, 浮点数, 小数, 和分数几种. 我们大可以把python解释器当做计算器来用, 实际上我有时候就是这么干的. 在python中, 我们用+,-,*,/来代表数学中的加减乘除四中运算,除此之外,我们还有 // 来获取除法结果的向下取证部分, 用 % 来获取除法结果的余数. 用 ** 表示幂运算, 也可以用math模块中的pow()函数达到同样的目的,关于内置模块的介绍会在后面部分. 这几种运算可以用在int和float类型的数据上.下面演示这几种运算:</p>
+<p>另外，List, tuple，range属于sequence type，具有一些共同的性质，比如:</p>
+<ul>
+<li><code>x in s, x not in x</code> 判断x是是否在s中</li>
+<li><code>s + t, n * s</code>  s和t拼接， 将s重复n次</li>
+<li><code>s[i:j:K]</code> 切片操作</li>
+<li><code>len(s) / min(s) / max(s)</code> s的长度，最小值，最大值</li>
+<li><code>s.count(x)</code>  统计s中x的次数</li>
+</ul>
+<h4 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h4><p>我们大可以把python解释器当做计算器来用, 实际上我有时候就是这么干的. 在python中, 我们用+,-,*,/来代表数学中的加减乘除四中运算,除此之外,我们还有 // 来获取除法结果的向下取整部分, 用 % 来获取除法结果的余数. 用 ** 表示幂运算, 也可以用math模块中的pow()函数达到同样的目的,关于内置模块的介绍会在后面部分. 这几种运算可以用在int和float类型的数据上.下面演示这几种运算:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 2 + 2  </span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; 2 - 2   </span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; 2 * 2   </span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; 5 / 2   </span><br><span class="line">2.5</span><br><span class="line">&gt;&gt;&gt; 5 // 2  </span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; 5 % 2   </span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 <h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>我们可以用” “或者’ ‘来向python的解释器表明这是一个字符串而不是一个变量名或者函数名之类的. 那如果想要在字符串里面用”或者’呢? 这里分几种情况, 如果要使用”也就是双引号, 可以在外层用单引号或者用转义符\, 如果要用’也就是单引号, 可以在外层使用双引号或者用转义符\, 转义符的意思是跟在它后面的字符不是它本身的含义. 下面举例子说明:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="string">'I am handsome'</span></span><br><span class="line"><span class="string">'I am handsome'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'I\'</span>m handsome<span class="string">'</span></span><br><span class="line"><span class="string">"I'</span>m handsome<span class="string">"</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; "</span>I<span class="string">'m handsome"</span></span><br><span class="line"><span class="string">"I'</span>m handsome<span class="string">"</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; "</span>I am \<span class="string">"handsome\""</span></span><br><span class="line"><span class="string">'I am "handsome"'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'I am "handsome"'</span></span><br><span class="line"><span class="string">'I am "handsome"'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">""</span>I\<span class="string">'m" handsome"</span></span><br><span class="line"><span class="string">'</span><span class="string">"I\'m "</span> handsome<span class="string">'</span></span><br></pre></td></tr></table></figure>
@@ -443,7 +472,17 @@
 <p>如果你想把几个字符串拼接在一起, 可以用+(加号或者*乘号),如果用变量表示字符串也是可以的, 另外相邻的两个字符串会自动拼接, 这个特性可以用来将一行文本拆分成多行文本(避免在编辑器中显示太宽, 但是实际打印出来还是一行文本), 但是变量和字符串不会自动拼接.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 2 * <span class="string">'s'</span> + <span class="string">'b'</span></span><br><span class="line">ssb</span><br><span class="line">&gt;&gt;&gt; s = <span class="string">'s'</span></span><br><span class="line">&gt;&gt;&gt; 2 * s + <span class="string">'b'</span> </span><br><span class="line">ssb</span><br><span class="line">&gt;&gt;&gt; <span class="string">'s'</span><span class="string">'b'</span></span><br><span class="line">sb</span><br><span class="line">&gt;&gt;&gt; s<span class="string">'b'</span> <span class="comment"># error</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">'I am'</span></span><br><span class="line"><span class="string">'handsome'</span>)</span><br><span class="line">I am handsome</span><br></pre></td></tr></table></figure>
 <p>总之，单引号双引号都可表示字符串是一个人性化的设计，一般来说，如果字符串里有单引号就用双引号，反之用双引号，但是建议<strong>优先</strong>使用<strong>单引号</strong>。如果需要换行使用三引号。</p>
-<p>当我们要处理的数据不是不是单个的时候（大多数情况都是如此），我们不能用一个一个变量来表示，而是要将具有某种内在联系的，需要进行相同处理的数据做批量存储。这样写起来和处理起来都比较方便。另外，也很重要的一点是，我们实际上有很多重复而又基本的需求，比如增删改查排序等等，如果这些操作需要我们手动实现的话是很麻烦的，也是没有必要的。因此后面四种数据类型使用频率会更高。</p>
+<h5 id="String-Format"><a href="#String-Format" class="headerlink" title="String Format"></a>String Format</h5><p>有时候，我们需要在字符串中嵌入变量的值，或者让字符串的输出更加美观，string的<code>format</code>方法就是用来做这个事情的，在需要format的字符串中，会用<code>{}</code>来表示待替换的位置，即<code>&#39;...{}...&#39;</code>.format([arguments])。括号里面的语法规则概括来说就是<code>[field_name] ![conversion] :[format_spec]</code>。</p>
+<p><strong>field_name</strong> 传入的关键字参数名字或者index。如果是第一个参数那么index就是0</p>
+<p><strong>conversion</strong> 就是在参数传入字符串之前先进行一些转变。目前支持三种转变：</p>
+<ul>
+<li><code>{!s}</code> 调用str()函数先</li>
+<li><code>{!r}</code> 调用repr()函数先</li>
+<li><code>{!a}</code> 调用ascii()函数先</li>
+</ul>
+<p><strong>format_spec</strong>就是一个format string，代表传入的字符串该以什么形式显示。比如用多少宽度显示，左对齐还是右对齐，用什么字符填充，显示精度以及显示类型。具体可以用什么选项可以取参考<a href="https://docs.python.org/3.4/library/string.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>下面举几个例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="string">'&#123;0&#125;, &#123;1&#125;, &#123;2&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line"><span class="string">'a, b, c'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'&#123;2&#125;, &#123;1&#125;, &#123;0&#125;'</span>.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line"><span class="string">'c, b, a'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'&#123;first&#125;, &#123;second&#125;, &#123;third&#125;'</span>.format(first=<span class="string">'a'</span>, second=<span class="string">'b'</span>, third=<span class="string">'c'</span>)</span><br><span class="line"><span class="string">'a, b, c'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'&#123;:*^30&#125;'</span>.format(<span class="string">'centered'</span>)  <span class="comment"># use '*' as a fill char</span></span><br><span class="line"><span class="string">'***********centered***********'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">"int: &#123;0:d&#125;;  hex: &#123;0:#x&#125;;  oct: &#123;0:#o&#125;;  bin: &#123;0:#b&#125;"</span>.format(42)</span><br><span class="line"><span class="string">'int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010'</span></span><br><span class="line">&gt;&gt;&gt; import datetime</span><br><span class="line">&gt;&gt;&gt; d = datetime.datetime(2010, 7, 4, 12, 15, 58)</span><br><span class="line">&gt;&gt;&gt; <span class="string">'&#123;:%Y-%m-%d %H:%M:%S&#125;'</span>.format(d)</span><br><span class="line"><span class="string">'2010-07-04 12:15:58'</span></span><br></pre></td></tr></table></figure>
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>列表List可以说是python中最常用的数据类型， 一般用来存储待操作的数据，这可能是得益于其丰富的内置函数，切片以及列表推导的特性，使用起来方便而灵活，学过c的同学可以理解成加强版的数组。理论上来说，列表可以存储不同的数据类型，但是实际上一般都是存储的同样的数据类型。</p>
 <p>比如我们用一个列表存储过去一小时网站新注册的用户名：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; names= [<span class="string">'zhuhaihao'</span>, <span class="string">'shenliangshan'</span>, <span class="string">'leijian'</span>, <span class="string">'liaoyuan'</span>]</span><br></pre></td></tr></table></figure>
@@ -479,6 +518,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; even_ages = [i <span class="keyword">for</span> i <span class="keyword">in</span> ages <span class="keyword">if</span> i % 2 == 0]</span><br><span class="line">&gt;&gt;&gt; even_ages</span><br><span class="line">[18, 20, 18]</span><br></pre></td></tr></table></figure>
 <p>通过上面的两个例子我们可以总结，列表推导的一般组成是：中括号，然后里面包含一个表达式，紧跟着一个for循环，然后还有零个或多个for循环或者if语句。</p>
 <h5 id="del关键字"><a href="#del关键字" class="headerlink" title="del关键字"></a>del关键字</h5><p>del关键字用来删除列表中的某个元素或者删除整个列表，下面是使用示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">[19, 18, 20, 19, 18]          </span><br><span class="line">&gt;&gt;&gt; del ages[0]               </span><br><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">[18, 20, 19, 18]              </span><br><span class="line">&gt;&gt;&gt; del ages                  </span><br><span class="line">&gt;&gt;&gt; ages                      </span><br><span class="line">Traceback (most recent call last):                          </span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line 1, <span class="keyword">in</span> &lt;module&gt;                       </span><br><span class="line">NameError: name <span class="string">'ages'</span> is not defined</span><br></pre></td></tr></table></figure></p>
+<h4 id="range"><a href="#range" class="headerlink" title="range"></a>range</h4><p>range类型是不可变整数序列，主要用于在for语句中控制循环的次数，比如，如果我们要循环十次做某种重复性操作操作的话：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    <span class="comment"># do something</span></span><br></pre></td></tr></table></figure>
+<p>range不支持<strong>sequence type</strong> 中的拼接和重复操作，因为这两种操作会违背其连续整数序列的性质。</p>
 <h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><p>我们可以发现前面讲过的字符串和列表有很多相似的地方，比如索引和切片操作，他们都属于有序数据类型，而tuple也是一种有序数据类型，所谓有序其实也就是可以索引，后面还会讲到无序数据类型，元素的顺序不固定，没办法索引。</p>
 <p>tuple由一系列逗号分开的值组成，如果只包含一个元素，要在最后面加一个逗号，如果不包含元素，用一对括号初始化即可。和数组一样，tuple可以嵌套tuple，和字符串一样，tuple也是不可变对象，不能改变某个元素的值。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t                         </span><br><span class="line">(1, <span class="string">'egweg'</span>, (1, 2))          </span><br><span class="line">&gt;&gt;&gt; t[0]                      </span><br><span class="line">1                             </span><br><span class="line">&gt;&gt;&gt; t[0] = 2                  </span><br><span class="line">Traceback (most recent call last):                          </span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line 1, <span class="keyword">in</span> &lt;module&gt;                       </span><br><span class="line">TypeError: <span class="string">'tuple'</span> object does not support item assignment  </span><br><span class="line">&gt;&gt;&gt; t = ()</span><br><span class="line">&gt;&gt;&gt; t</span><br><span class="line">()</span><br><span class="line">&gt;&gt;&gt; t = 1,</span><br><span class="line">&gt;&gt;&gt; t</span><br><span class="line">(1,)</span><br></pre></td></tr></table></figure>
@@ -643,7 +685,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -665,7 +707,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -714,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础特性"><span class="nav-number">2.</span> <span class="nav-text">基础特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">标准数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Number"><span class="nav-number">2.2.1.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-number">2.2.2.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">2.2.3.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切片"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表推导"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">列表推导</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#del关键字"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">del关键字</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tuple"><span class="nav-number">2.2.4.</span> <span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">2.2.5.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dict"><span class="nav-number">2.2.6.</span> <span class="nav-text">dict</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础特性"><span class="nav-number">2.</span> <span class="nav-text">基础特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量命名"><span class="nav-number">2.1.1.</span> <span class="nav-text">变量命名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">标准数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Number"><span class="nav-number">2.2.1.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String"><span class="nav-number">2.2.2.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-Format"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">String Format</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">2.2.3.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切片"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表推导"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">列表推导</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#del关键字"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">del关键字</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range"><span class="nav-number">2.2.4.</span> <span class="nav-text">range</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tuple"><span class="nav-number">2.2.5.</span> <span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">2.2.6.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dict"><span class="nav-number">2.2.7.</span> <span class="nav-text">dict</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
