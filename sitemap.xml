@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liadbiz.github.io/use-shadowsocks-on-mac/</loc>
+    
+    <lastmod>2018-08-31T04:51:12.799Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liadbiz.github.io/about/index.html</loc>
+    
+    <lastmod>2018-08-30T12:28:22.480Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liadbiz.github.io/how-to-make-gif-on-mac/</loc>
+    
+    <lastmod>2018-06-05T08:53:22.844Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liadbiz.github.io/vim-custimization/</loc>
+    
+    <lastmod>2018-06-05T06:44:34.778Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liadbiz.github.io/python-tutorial-1-02/</loc>
     
     <lastmod>2018-05-02T14:03:24.908Z</lastmod>
@@ -16,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/vim-custimization/</loc>
-    
-    <lastmod>2018-04-23T04:12:05.768Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://liadbiz.github.io/why-your-zsh-is-slow/</loc>
     
     <lastmod>2018-04-12T11:48:40.245Z</lastmod>
@@ -33,13 +54,6 @@
     <loc>http://liadbiz.github.io/better-hexo-blog/</loc>
     
     <lastmod>2018-03-30T12:55:25.899Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liadbiz.github.io/about/index.html</loc>
-    
-    <lastmod>2018-03-30T07:02:23.393Z</lastmod>
     
   </url>
   
@@ -79,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
+    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
     
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/how-css-modules-work/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-10/</loc>
     
     <lastmod>2018-03-30T05:31:23.654Z</lastmod>
     
@@ -128,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-03/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-04/</loc>
     
     <lastmod>2018-03-30T05:31:23.644Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liadbiz.github.io/github-open-source-guide-04/</loc>
+    <loc>http://liadbiz.github.io/github-open-source-guide-03/</loc>
     
     <lastmod>2018-03-30T05:31:23.644Z</lastmod>
     
