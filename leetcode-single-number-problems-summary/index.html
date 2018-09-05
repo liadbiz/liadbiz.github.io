@@ -87,7 +87,7 @@
 <meta property="og:description" content="Leetcode上single number问题的总结">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/single_number2.png">
-<meta property="og:updated_time" content="2018-09-05T14:28:25.928Z">
+<meta property="og:updated_time" content="2018-09-05T14:34:10.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode Single Number 问题总结">
 <meta name="twitter:description" content="Leetcode上single number问题的总结">
@@ -396,8 +396,8 @@
 <p>首先考虑一个相对简单的问题，加入输入数组里面只有0和1，我们要统计1出现的次数，当遇到1就次数加1，遇到0就不变当次数达到k时，统计次数又回归到0。我们可以用m位来做这个计数工作，分别是$x_m, x_{m-1}, \ldots, x_1$，只需要确保$2^m &gt; k$即可，接下来我们要考虑的问题就是，在每一次check元素的时候，做什么操作可以满足上述的条件。在开始计数之前，每一个计数位都初始化位0，然后遍历<code>nums</code>，直到遇到第一个1，此时$x_1$会变成1，继续遍历，直到遇到第二个1，此时$x_1=0, x_2=1$，直到这里应该可以看出规律了。每遇到一个1，对于$x_m, x_{m-1}, \ldots, x_1$，只有之前的所有位都为1的时候才需要改变自己的值，如果本来是1，就变成0，本来是0，就变成1 ，如果遇到的是0，就保持不变。搞清楚了这个逻辑，写出表达式就不难了。这里以m=3为例给出python代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">    x3 ^= x2 &amp; x1 &amp; i</span><br><span class="line">    x2 ^= x1 &amp; i</span><br><span class="line">    x1 ^= i</span><br><span class="line"><span class="comment"># other operations</span></span><br></pre></td></tr></table></figure>
 <p>但是到这里还没有解决当1的次数到k时，计数值要重新返回到0，也就是所有计数位都变成0这个问题。解决办法也是比较巧妙。</p>
-<p>假设我们有一个标志变量，只有当计数值到k的时候这个标志变量才为0，其余情况下都是1，然后每一次check元素的时候都对每个计数位和标志变量做与操作，那么如果标志变量为1，也就是计数值为k的时候，所有位都会变成0， 反之，所有位都会保持不变，那么我们的目的也就达到了。</p>
-<p>好，最后一个问题是怎么计算标志变量的值。将k转变为二进制，只有计数值达到k，所有计数位才会和和k的二进制一样，所以只需要将k的二进制位做与操作，如果某个位为0，就与该位取反之后的值做与操作。</p>
+<p>假设我们有一个标志变量，只有当计数值到k的时候这个标志变量才为0，其余情况下都是1，然后每一次check元素的时候都对每个计数位和标志变量做与操作，那么如果标志变量为0，也就是计数值为k的时候，所有位都会变成0， 反之，所有位都会保持不变，那么我们的目的也就达到了。</p>
+<p>好，最后一个问题是怎么计算标志变量的值。将k转变为二进制，只有计数值达到k，所有计数位才会和k的二进制一样，所以只需要将k的二进制位做与操作，如果某个位为0，就与该位取反之后的值做与操作。</p>
 <p>以k=3, m=2为例，简要的python代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mask = ~(y1 &amp; y2) <span class="comment"># where yj = xj if kj = 1, and yj = ~xj if kj = 0, k1, k2是k的二进制表示(j = 1 to 2).  </span></span><br><span class="line">x2 &amp;= mask;</span><br><span class="line">x1 &amp;= mask;</span><br></pre></td></tr></table></figure>
 <p>将这两部分合起来就是解决这个问题的完整算法了。</p>
