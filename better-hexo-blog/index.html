@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://liadbiz.github.io/images/create_class.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/leancloud403.jpg">
 <meta property="og:image" content="http://liadbiz.github.io/images/comment.jpg">
-<meta property="og:updated_time" content="2018-03-30T12:55:25.899Z">
+<meta property="og:updated_time" content="2018-09-06T07:52:47.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于hexo的next主题博客完善攻略">
 <meta name="twitter:description" content="告诉你如何升级hexo，添加简洁美观的评论插件，给文章添加阅读次数。">
@@ -394,7 +394,7 @@
       
 
       
-        <h2 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h2><p>很多用hexo搭建博客的同学都是用的简介大方（性冷淡）的next主题，我大概是两年前搭建的博客，一直没怎么打理，最近发现之前用的评论插件多说已经停止服务了，另外找的一个国外的系统disqus又需要用户翻墙，找了一圈，终于找到容易使用而且同样简洁大方性冷淡风格的插件Valinejs，配合Leancloud还挺好用，另外做了版本的升级，这里给出评论的设置过程以及升级过程中遇到的问题和解决办法。</p>
+        <h3 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h3><p>很多用hexo搭建博客的同学都是用的简介大方（性冷淡）的next主题，我大概是两年前搭建的博客，一直没怎么打理，最近发现之前用的评论插件多说已经停止服务了，另外找的一个国外的系统disqus又需要用户翻墙，找了一圈，终于找到容易使用而且同样简洁大方性冷淡风格的插件Valinejs，配合Leancloud还挺好用，另外做了版本的升级，这里给出评论的设置过程以及升级过程中遇到的问题和解决办法。</p>
 <h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><h4 id="hexo升级"><a href="#hexo升级" class="headerlink" title="hexo升级"></a>hexo升级</h4><p>因为换了新电脑，就直接把博客建在新电脑上了，直接<code>npm install hexo-cli -g</code>安装最新版本的hexo，我这里是3.6.0。然后：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>完成后把之前的source文件夹和博客配置文件拷贝过来，值得注意的是，博客用到的图片是放在<code>public/images</code>目录下的，所以还要把之前的图片拷贝过来。完成之后运行<code>hexo g &amp;&amp; hexo s</code>，如果一切正常的话，打开浏览访问<code>http://localhost:4000/</code>就可以看到我们的博客了。</p>
@@ -666,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原由"><span class="nav-number">1.</span> <span class="nav-text">原由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级"><span class="nav-number">1.1.</span> <span class="nav-text">升级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo升级"><span class="nav-number">1.1.1.</span> <span class="nav-text">hexo升级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next主题升级"><span class="nav-number">1.1.2.</span> <span class="nav-text">next主题升级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加评论插件和阅读量计数"><span class="nav-number">1.2.</span> <span class="nav-text">添加评论插件和阅读量计数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加评论"><span class="nav-number">1.2.1.</span> <span class="nav-text">添加评论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加统计量"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加统计量</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原由"><span class="nav-number">1.</span> <span class="nav-text">原由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级"><span class="nav-number">2.</span> <span class="nav-text">升级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo升级"><span class="nav-number">2.1.</span> <span class="nav-text">hexo升级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next主题升级"><span class="nav-number">2.2.</span> <span class="nav-text">next主题升级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加评论插件和阅读量计数"><span class="nav-number">3.</span> <span class="nav-text">添加评论插件和阅读量计数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加评论"><span class="nav-number">3.1.</span> <span class="nav-text">添加评论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加统计量"><span class="nav-number">3.2.</span> <span class="nav-text">添加统计量</span></a></li></ol></li></ol></div>
             
 
           </div>
