@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="liadbiz&#39;s blog |">
 <meta property="og:description" content="Leetcode上single number问题的总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://liadbiz.github.io/images/single_number2.png">
-<meta property="og:updated_time" content="2018-09-26T08:00:40.583Z">
+<meta property="og:image" content="https://liadbiz.github.io/images/single_number2.png">
+<meta property="og:updated_time" content="2018-09-26T09:14:53.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode Single Number 问题总结">
 <meta name="twitter:description" content="Leetcode上single number问题的总结">
-<meta name="twitter:image" content="http://liadbiz.github.io/images/single_number2.png">
+<meta name="twitter:image" content="https://liadbiz.github.io/images/single_number2.png">
 
 
 
@@ -393,7 +393,7 @@
 </blockquote>
 <p>和上一题一样，我们还是可以用求和的方法来解决，这个思路也可推广到任意参数为k,p问题：输入数组每个元素都出现了k次，只有一个只出现了p次，求那个单独的只出现p次的数。</p>
 <p>但是位操作的方法就不是那么容易想到了，我这种渣渣自然是想不到的，但是看到讨论区有大神给出了详细的解释，但是篇幅比较长而且是英文，我这里就用中文解释一下。从第一个问题中我们可以大概看出，解决这类问题的关键是，遍历所有元素，进行某种reduce操作，这种操作要具有周期性，那么遍历之后的数就是我们要找的single number。比如在第一个题目中使用的是亦或操作，一个数如果出现偶数次那么亦或之后就会变成0，那么对于k为偶数，p为奇数的题我们都可以用相同方法解决。所以对于此题，我们要找到某种操作使得一个数出现k次之后又会重新回到最初的状态，类似于状态机的概念。直接可能很难想到，没关系，我们一步一步来。</p>
-<p>首先考虑一个相对简单的问题，加入输入数组里面只有0和1，我们要统计1出现的次数，当遇到1就次数加1，遇到0就不变当次数达到k时，统计次数又回归到0。我们可以用m位来做这个计数工作，分别是$x_m, x_{m-1}, \ldots, x_1$，只需要确保$2^m &gt; k$即可，接下来我们要考虑的问题就是，在每一次check元素的时候，做什么操作可以满足上述的条件。在开始计数之前，每一个计数位都初始化位0，然后遍历<code>nums</code>，直到遇到第一个1，此时$x_1$会变成1，继续遍历，直到遇到第二个1，此时$x_1=0, x_2=1$，直到这里应该可以看出规律了。每遇到一个1，对于$x_m, x_{m-1}, \ldots, x_1$，只有之前的所有位都为1的时候才需要改变自己的值，如果本来是1，就变成0，本来是0，就变成1 ，如果遇到的是0，就保持不变。搞清楚了这个逻辑，写出表达式就不难了。这里以m=3为例给出python代码：</p>
+<p>首先考虑一个相对简单的问题，加入输入数组里面只有0和1，我们要统计1出现的次数，当遇到1就次数加1，遇到0就不变当次数达到k时，统计次数又回归到0。我们可以用m位来做这个计数工作，即$x_m, x_{m-1}, \ldots, x_1$，只需要确保$2^m &gt; k$即可，接下来我们要考虑的问题就是，在每一次check元素的时候，做什么操作可以满足上述的条件。在开始计数之前，每一个计数位都初始化位0，然后遍历<code>nums</code>，直到遇到第一个1，此时$x_1$会变成1，继续遍历，直到遇到第二个1，此时$x_1=0, x_2=1$，直到这里应该可以看出规律了。每遇到一个1，对于$x_m, x_{m-1}, \ldots, x_1$，只有之前的所有位都为1的时候才需要改变自己的值，如果本来是1，就变成0，本来是0，就变成1 ，如果遇到的是0，就保持不变。搞清楚了这个逻辑，写出表达式就不难了。这里以m=3为例给出python代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">    x3 ^= x2 &amp; x1 &amp; i</span><br><span class="line">    x2 ^= x1 &amp; i</span><br><span class="line">    x1 ^= i</span><br><span class="line"><span class="comment"># other operations</span></span><br></pre></td></tr></table></figure>
 <p>但是到这里还没有解决当1的次数到k时，计数值要重新返回到0，也就是所有计数位都变成0这个问题。解决办法也是比较巧妙。</p>
 <p>假设我们有一个标志变量，只有当计数值到k的时候这个标志变量才为0，其余情况下都是1，然后每一次check元素的时候都对每个计数位和标志变量做与操作，那么如果标志变量为0，也就是计数值为k的时候，所有位都会变成0， 反之，所有位都会保持不变，那么我们的目的也就达到了。</p>
@@ -403,15 +403,15 @@
 <p>将这两部分合起来就是解决这个问题的完整算法了。</p>
 <p>接下来要考虑的问题就是如何将这个问题推广到整数。我说这话的意思是这个算法确实可以推广到整数，假设我们用32位来表示一个整数，那么我们只需要将$x_m, x_{m-1}, \ldots, x_1$换成32的整数即可。下面给出这个推广的过程方便大家理解。</p>
 <p>我们可以把32位分开来看，用32个m位计数器来统计对应位1的出现次数。换一种思路，我们也可以把这32个m位的计数器看成m个32位计数器。这里我们同样用$x_m, x_{m-1}, \ldots, x_1$来表示。</p>
-<p><img src="/images/single_number2.png" alt="single number II"></p>
-<p>以$x_1$为例，其第r位的值由什么决定呢？显然是要数组中所有整数第r位1的出现次数来确定，这里用<code>q</code>表示，更具体的说是由$q’=q%k$决定（因为每出现k次就会回到0），再具体一点，等于其二进制的第r位。而除开我们要找的single number,其余的数在计数结束之后，对m个计数器的值没有贡献，因为都出现p次，然后计数值归0，也就是说，计数器最后的每个位的值实际上是由single number的对应位1的次数决定的。前面已经说过，对于一般性的问题，假设single number出现的次数是p，当然p可以大于k，也可以小于k，由于我们设计的计数器的性质，出现k次等于归零，所以对最后计数器的值有贡献的只是<code>p&#39; = p % k</code>。</p>
+<p><img src="https://liadbiz.github.io/images/single_number2.png" alt="single number II"></p>
+<p>以$x_1$为例，其第r位的值由什么决定呢？显然是要数组中所有整数第r位1的出现次数来确定，这里用<code>q</code>表示，更具体的说是由$q’=q \% k$决定（因为每出现k次就会回到0），再具体一点，等于其二进制的第r位。而除开我们要找的single number,其余的数在计数结束之后，对m个计数器的值没有贡献，因为都出现p次，然后计数值归0，也就是说，计数器最后的每个位的值实际上是由single number的对应位1的次数决定的。前面已经说过，对于一般性的问题，假设single number出现的次数是p，当然p可以大于k，也可以小于k，由于我们设计的计数器的性质，出现k次等于归零，所以对最后计数器的值有贡献的只是<code>p&#39; = p % k</code>。</p>
 <p>那么，事情就很明朗了，我们把<code>p&#39;</code>写成二进制形式，那么其中某一位为1，那么对应计数器的第r位就和single number的第r位一致。因为如果single number的第r位为0， 那么计数值为0，自然计数器的第r位也为0，如果为1，那么计数器的第r位就和<code>p&#39;</code>的二进制对应位一致，也是1.</p>
 <p>所以，在最后计数结束的时候，我们只需要返回<code>p&#39;</code>二进制为1的对应计数器即可，其数值肯定是和single number的值相同。</p>
 <p>以这个题目为例，<code>k=3, p=2</code>，那么<code>m=2</code>，也就是我们需要两个32位的计数器。而$p \% k$的二进制是<code>10</code>，那我们最后应该返回<code>x2</code>。对应的python代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        x1, x2, mask = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            x2 ^= x1 &amp; i;</span><br><span class="line">            x1 ^= i;</span><br><span class="line">            mask = ~(x1 &amp; x2);</span><br><span class="line">            x2 &amp;= mask;</span><br><span class="line">            x1 &amp;= mask;</span><br><span class="line">        <span class="keyword">return</span> x2</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，这个方法的使用条件是<code>p % k !=0</code>，如果<code>p</code>是<code>k</code>的整数倍的话，这个方法是不适用的。</p>
-<h3 id="single-number-III"><a href="#single-number-III" class="headerlink" title="single number III"></a>single number III</h3><blockquote>
-<p>最后是single number问题的第二个变种，问题描述是：</p>
+<h3 id="single-number-III"><a href="#single-number-III" class="headerlink" title="single number III"></a>single number III</h3><p>最后是single number问题的第二个变种，问题描述是：</p>
+<blockquote>
 <p>Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.</p>
 <p>Example:</p>
 <p>Input:  [1,2,1,3,2,5]<br>Output: [3,5]</p>
@@ -424,14 +424,12 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        xor = <span class="number">0</span></span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        b = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            xor ^= num</span><br><span class="line">        mask = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span>(xor&amp;mask == <span class="number">0</span>):</span><br><span class="line">            mask = mask &lt;&lt; <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num&amp;mask:</span><br><span class="line">                a ^= num</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                b ^= num</span><br><span class="line">        <span class="keyword">return</span> [a, b]</span><br></pre></td></tr></table></figure>
 <p>同样，这类解法还是有局限性的，那就是两个special number出现的要是1，而且其余数出现的次数要是偶数。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最后，我们对single number问题及其变种做一下总结：</p>
-<ul>
+<ol>
 <li>用求和的方式是通用的解法</li>
-<li>位操作方法是有局限的，对于不同的变种有不同解法，用位操作解决的关键是<ul>
+<li>位操作方法是有局限的，对于不同的变种有不同解法，用位操作解决的关键是</li>
 <li>利用相同的数偶数次按位亦或结果为0，计数次按位亦或是自身</li>
 <li>灵活运用mask和与操作来改变或者检验某一位</li>
-</ul>
-</li>
-</ul>
+</ol>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>文章主要参考了讨论区的一片英文的帖子，如果英文好的可以去看下原文。</p>
 <p><a href="https://leetcode.com/problems/single-number-ii/discuss/43295/Detailed-explanation-and-generalization-of-the-bitwise-operation-method-for-single-numbers" target="_blank" rel="noopener">https://leetcode.com/problems/single-number-ii/discuss/43295/Detailed-explanation-and-generalization-of-the-bitwise-operation-method-for-single-numbers</a></p>
 
