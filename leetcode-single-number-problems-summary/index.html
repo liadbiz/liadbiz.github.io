@@ -87,7 +87,7 @@
 <meta property="og:description" content="Leetcode上single number问题的总结">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liadbiz.github.io/images/single_number2.png">
-<meta property="og:updated_time" content="2018-09-05T14:34:10.757Z">
+<meta property="og:updated_time" content="2018-09-26T08:00:40.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode Single Number 问题总结">
 <meta name="twitter:description" content="Leetcode上single number问题的总结">
@@ -407,8 +407,8 @@
 <p>以$x_1$为例，其第r位的值由什么决定呢？显然是要数组中所有整数第r位1的出现次数来确定，这里用<code>q</code>表示，更具体的说是由$q’=q%k$决定（因为每出现k次就会回到0），再具体一点，等于其二进制的第r位。而除开我们要找的single number,其余的数在计数结束之后，对m个计数器的值没有贡献，因为都出现p次，然后计数值归0，也就是说，计数器最后的每个位的值实际上是由single number的对应位1的次数决定的。前面已经说过，对于一般性的问题，假设single number出现的次数是p，当然p可以大于k，也可以小于k，由于我们设计的计数器的性质，出现k次等于归零，所以对最后计数器的值有贡献的只是<code>p&#39; = p % k</code>。</p>
 <p>那么，事情就很明朗了，我们把<code>p&#39;</code>写成二进制形式，那么其中某一位为1，那么对应计数器的第r位就和single number的第r位一致。因为如果single number的第r位为0， 那么计数值为0，自然计数器的第r位也为0，如果为1，那么计数器的第r位就和<code>p&#39;</code>的二进制对应位一致，也是1.</p>
 <p>所以，在最后计数结束的时候，我们只需要返回<code>p&#39;</code>二进制为1的对应计数器即可，其数值肯定是和single number的值相同。</p>
-<p>以这个题目为例，<code>k=3, p=2</code>，那么<code>m=2</code>，也就是我们需要两个32位的计数器。而k的二进制是<code>11</code>，那我们最后返回任意一个计数器都是可以的。对应的python代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        x1, x2, mask = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            x2 ^= x1 &amp; i;</span><br><span class="line">            x1 ^= i;</span><br><span class="line">            mask = ~(x1 &amp; x2);</span><br><span class="line">            x2 &amp;= mask;</span><br><span class="line">            x1 &amp;= mask;</span><br><span class="line">        <span class="keyword">return</span> x1</span><br></pre></td></tr></table></figure>
+<p>以这个题目为例，<code>k=3, p=2</code>，那么<code>m=2</code>，也就是我们需要两个32位的计数器。而$p \% k$的二进制是<code>10</code>，那我们最后应该返回<code>x2</code>。对应的python代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        x1, x2, mask = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            x2 ^= x1 &amp; i;</span><br><span class="line">            x1 ^= i;</span><br><span class="line">            mask = ~(x1 &amp; x2);</span><br><span class="line">            x2 &amp;= mask;</span><br><span class="line">            x1 &amp;= mask;</span><br><span class="line">        <span class="keyword">return</span> x2</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，这个方法的使用条件是<code>p % k !=0</code>，如果<code>p</code>是<code>k</code>的整数倍的话，这个方法是不适用的。</p>
 <h3 id="single-number-III"><a href="#single-number-III" class="headerlink" title="single number III"></a>single number III</h3><blockquote>
 <p>最后是single number问题的第二个变种，问题描述是：</p>
@@ -732,8 +732,6 @@
   
 
 
-  
-
 
 
 
@@ -772,11 +770,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
