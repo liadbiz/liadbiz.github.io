@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="A10gB5knD13kj0AnV_W44ZQAWP0Qy4ECwlgdlighbTI" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5.1.4">
+
+
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="leetcode bit maniputation" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="位操作基础和Leetcode上关于位操作的问题示例">
+<meta name="keywords" content="leetcode bit maniputation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode位操作问题总结">
+<meta property="og:url" content="http://liadbiz.github.io/leetcode-bit-maniputation-summary/index.html">
+<meta property="og:site_name" content="liadbiz&#39;s blog |">
+<meta property="og:description" content="位操作基础和Leetcode上关于位操作的问题示例">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-08T08:39:01.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode位操作问题总结">
+<meta name="twitter:description" content="位操作基础和Leetcode上关于位操作的问题示例">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liadbiz.github.io/leetcode-bit-maniputation-summary/"/>
+
+
+
+
+
+  <title>Leetcode位操作问题总结 | liadbiz's blog |</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">liadbiz's blog |</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Explain better</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-love">
+          <a href="/love" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            虐狗
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liadbiz.github.io/leetcode-bit-maniputation-summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liadbiz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/monkey_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liadbiz's blog |">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Leetcode位操作问题总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-30T19:06:21+08:00">
+                2018-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/leetcode-bit-maniputation-summary/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/leetcode-bit-maniputation-summary/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/leetcode-bit-maniputation-summary/" class="leancloud_visitors" data-flag-title="Leetcode位操作问题总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  位操作基础和Leetcode上关于位操作的问题示例
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><p>位操作通常用来解决比较底层的计算机问题，比如网络传输，数据压缩，加密有，优化等。<br>在<a href="https:leetcode.com" target="_blank" rel="noopener">leetcode</a>也有31道题考察这个知识点。这篇文章主要总结了位<br>操作的基础知识以及部分题目示例。</p>
+<p>常说的位操作符指的是<code>&amp;</code>(与)，<code>|</code>(或)， <code>^</code>(亦或), <code>~</code>(否), 以及<code>&lt;&lt;</code>,<br><code>&gt;&gt;</code>位移运算符。在用位操作来解决问题的时候，选择使用哪个位操作符是关键。下面来看他们的用处。</p>
+<h4 id="按位亦或"><a href="#按位亦或" class="headerlink" title="^ 按位亦或"></a><code>^</code> 按位亦或</h4><p>不同位置1，相同位置0。</p>
+<p>我们先来看一个简单的题<a href="https://leetcode.com/problems/hamming-distance/description/" target="_blank" rel="noopener">461</a>。汉明距离我们都很熟悉，如果对应位不同的话就算距离加一，这正好和亦或的逻辑是一样的，因此很容易想到最简单的AC解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hammingDistance</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;:b&#125;'</span>.format(x ^ y).count(<span class="string">'1'</span>)</span><br></pre></td></tr></table></figure>
+<p>题<a href="https://leetcode.com/problems/total-hamming-distance/description/" target="_blank" rel="noopener">477</a>是上一题的一种拓展，要求计算列表哪所有组合的汉明距离之和，除了常规的找出所有排列然后计算汉明距离之外，还有另外一种思路：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">totalHammingDistance</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> sum(i.count(<span class="string">'1'</span>) * i.count(<span class="string">'0'</span>) <span class="keyword">for</span> i <span class="keyword">in</span> zip(*map(<span class="string">':032b'</span>.format, nums)))</span><br></pre></td></tr></table></figure>
+<p>再比如题<a href="https://leetcode.com/problems/sum-of-two-integers/description/" target="_blank" rel="noopener">371</a>求两个正数的和，如果不能用求和运算符以及内置的函数的话，只能用位操作<br>来模拟加法的过程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getSum</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> a <span class="keyword">if</span> b == <span class="number">0</span> <span class="keyword">else</span> self.getSum(a^b, (a&amp;b)&lt;&lt;<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>其中<code>a^b</code>表示不考虑进位时两个数相加，而<code>(a&amp;b)&lt;&lt;1</code>表示各个位上的进位，两者相加<br>即可，大家可以用八位表示的两个数相加演示这个过程。由于python整形溢出之后会自动转换成长整型，所以对于上述代码对于有溢出情况的加法无法得出正确答案。这里提供一个AC解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getSum</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type a: int</span></span><br><span class="line"><span class="string">        :type b: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 32位能表示的最大整数(2147483647)</span></span><br><span class="line">        MAX = <span class="number">0x7FFFFFFF</span></span><br><span class="line">        <span class="comment"># 32位能表示的最小负数(-2147483648)</span></span><br><span class="line">        MIN = <span class="number">0x80000000</span></span><br><span class="line">        <span class="comment"># 用来获取最低32位的掩码，此题的测试用力应该都是32位整数</span></span><br><span class="line">        <span class="comment"># mask = 0xFFFFFFFF</span></span><br><span class="line">        <span class="keyword">while</span> b:</span><br><span class="line">            <span class="comment"># 只取32位保证循环可以结束</span></span><br><span class="line">            a, b = (a ^ b) &amp; mask, ((a &amp; b) &lt;&lt; <span class="number">1</span>) &amp; mask</span><br><span class="line">            <span class="comment"># </span></span><br><span class="line">        <span class="keyword">return</span> a <span class="keyword">if</span> a &lt;= MAX <span class="keyword">else</span> ~(a ^ mask)</span><br></pre></td></tr></table></figure>
+<p>实际上上述代码还是有问题的，具体什么问题大家可以想一下，因为我也不知道怎么解决，所以这里就不讨论了哈哈哈。</p>
+<p><a href="https://leetcode.com/problems/missing-number/" target="_blank" rel="noopener">268</a>题也可以用按位亦或的方法解决，当然，你也可以用普通数学方法。</p>
+<p>这里利用的是两个相同的数进行按位亦或的操作就会得到0这个性质，我们可以把输入数组中的数看成数组下标的乱序排列，因此将数组下标和数做亦或操作，最后结果就是我们要的missing number。AC解如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">missingNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            res ^= i</span><br><span class="line">            res ^= nums[i]</span><br><span class="line">        res ^= len(nums)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>还可以用亦或解决的题有<a href="https://leetcode.com/problems/number-complement/description/" target="_blank" rel="noopener">476</a>，<a href="https://leetcode.com/problems/binary-number-with-alternating-bits/description/" target="_blank" rel="noopener">693</a>，<a href="https://leetcode.com/problems/find-the-difference/description/" target="_blank" rel="noopener">389</a>，<a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/" target="_blank" rel="noopener">421</a>这里就不一一解释了，感兴趣的可以在我的<a href="https://github.com/liadbiz/leetcode_solutions" target="_blank" rel="noopener">github</a>看一下AC解。</p>
+<h4 id="按位或"><a href="#按位或" class="headerlink" title="| 按位或"></a><code>|</code> 按位或</h4><p>有1就置1，全0就置0.</p>
+<p>找出小于n的最大的2的倍数，用位运算也可以解决：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largest_opwer</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        n = n | n &gt;&gt; <span class="number">1</span></span><br><span class="line">        print(n)</span><br><span class="line">        n = n | n &gt;&gt; <span class="number">2</span></span><br><span class="line">        print(n)</span><br><span class="line">        n = n | n &gt;&gt; <span class="number">4</span></span><br><span class="line">        print(n)</span><br><span class="line">        n = n | n &gt;&gt; <span class="number">8</span></span><br><span class="line">        print(n)</span><br><span class="line">        n = n | n &gt;&gt; <span class="number">16</span></span><br><span class="line">        print(n)</span><br><span class="line">        <span class="keyword">return</span> (n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>如果给定的数大与<code>2**16</code>,那么再向右位移对应的位数即可，主要的思路是使得最高为1的位右边的位全部变成1，然后加一右移一位就是</p>
+<h4 id="amp-按位与"><a href="#amp-按位与" class="headerlink" title="&amp; 按位与"></a><code>&amp;</code> 按位与</h4><p>全1置1，有0置0。</p>
+<p>先来看一下相对简单的题<a href="https://leetcode.com/problems/counting-bits/description/" target="_blank" rel="noopener">338</a>。这个题是要统计给定<code>num</code>范围内所有数的1的个数，很容易能想到的解法是遍历所有的数并且分别统计其二进制中1的个数，复杂度是<code>O(n*sizeof(integer))</code>，但是题中已经说明要求找出<code>O(n)</code>的解法。</p>
+<p>仔细观察可以看出来，对于每一个偶数i，其1的个数和<code>i &gt;&gt; 1</code>是一样的，而对于每一个奇数i，其1的个数是<code>i &gt;&gt; 2</code>的1的个数加一，按照这个逻辑，就能写出下面的AC解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countBits2</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type num: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(num + <span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, num + <span class="number">1</span>):</span><br><span class="line">            res[i] = res[i &gt;&gt; <span class="number">1</span>] + (<span class="number">1</span> &amp; i)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>代码中用<code>1 &amp; i</code>判断i是偶数还是奇数。</p>
+<p>题<a href="https://leetcode.com/problems/power-of-two/description/" target="_blank" rel="noopener">231</a>和<a href="https://leetcode.com/problems/power-of-four/description/" target="_blank" rel="noopener">342</a>则是用<code>n&amp;(n-1)</code>来判断<code>n</code>是否是2的倍数。<br>题<a href="https://leetcode.com/problems/number-of-1-bits/description/" target="_blank" rel="noopener">191</a>进一步使用该技巧来统计一个二进制数中1的个数。</p>
+<h4 id="按位取反"><a href="#按位取反" class="headerlink" title="~ 按位取反"></a><code>~</code> 按位取反</h4><p>1置0，0置1.</p>
+<p>暂时没有做到用这个技巧的题。</p>
+<h4 id="gt-gt-右移和-lt-lt-左移"><a href="#gt-gt-右移和-lt-lt-左移" class="headerlink" title="&gt;&gt;右移和&lt;&lt;左移"></a><code>&gt;&gt;</code>右移和<code>&lt;&lt;</code>左移</h4><p>这两个运算符其实基本上在每个位操作的题都会涉及到，用来计算除2和乘2。这里就拿一个比较有意思的题来举例。题号是<a href="https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/description/" target="_blank" rel="noopener">762</a>。</p>
+<p>题目的意思是很清楚的的，也很容易想出一个可行的思路：遍历所给区间的所有数，然后找出其二进制中1的个数，判断其是否是素数。但是这样的解法每次在判断某个数为素数的操作上重复了很多次，如果能用位操作优化这个过程就可以降低整个算法的复杂度。</p>
+<p>这里直接给出代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimeSetBits</span><span class="params">(self, L, R)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> sum(<span class="number">665772</span> &gt;&gt; bin(i).count(<span class="string">'1'</span>) &amp; <span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(L, R + <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>代码的巧妙之处是利用了题目给的关于<code>L</code>和<code>R</code>的范围在<code>10^6</code>之内，那么很容易知道这之间的数的二进制中1的个数最多只能有19个，也就是说，我们只需要在判断素数的时候检查其是不是在比19小的素数的集合里，也就是是否在<code>[2, 3, 5, 7, 11, 13,17, 19]</code>之内。将对应位置1其余位置0，得到665772，所以在判断是否为素数的时候，只需要将665772右移相应的位然后判断最低位是否位1即可。</p>
+<p>还有一个可以用类似思想解决的题<a href="https://leetcode.com/problems/subsets/description/" target="_blank" rel="noopener">78</a>，题目要求是求出给定集合的所有子集，根据学过的集合知识可以知道，对于有<code>n</code>个元素的集合， 一共有<code>2**n</code>个子集，因此我们可以用一个<code>n</code>位的计数器来，每一个子集都对应着一个计数器的值，计数器相应位取<code>1</code>就代表对应元素在该子集内。对应的python的AC解如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subsets3</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type nums: List[int]</span></span><br><span class="line"><span class="string">    :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    res = []</span><br><span class="line">    n = <span class="number">1</span> &lt;&lt; len(nums)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        tmp = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> i &amp; (<span class="number">1</span> &lt;&lt; j):</span><br><span class="line">                tmp.append(nums[j])</span><br><span class="line">        res.append(tmp)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>题<a href="https://leetcode.com/problems/bitwise-and-of-numbers-range/description/" target="_blank" rel="noopener">201</a>也是使用右移的一个例子。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>从上面的部分示例中可以看出，位运算通常用来降低包含排列，计数等复杂度比较高的操作，当然也可以用来代替乘2除2，判断素数，偶数，倍数等基本操作，但是我认为其意义在于前者，即用计数器来降低设计到排列或者计数的问题的复杂度。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary:-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently" target="_blank" rel="noopener">https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary:-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>有钱的捧个钱场，没钱的捧个人场</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="liadbiz 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/leetcode-single-number-problems-summary/" rel="next" title="Leetcode Single Number 问题总结">
+                <i class="fa fa-chevron-left"></i> Leetcode Single Number 问题总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/monkey_logo.jpg"
+                alt="liadbiz" />
+            
+              <p class="site-author-name" itemprop="name">liadbiz</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liadbiz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhuhh2@shanghaitech.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按位亦或"><span class="nav-number">1.1.</span> <span class="nav-text">^ 按位亦或</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位或"><span class="nav-number">1.2.</span> <span class="nav-text">| 按位或</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#amp-按位与"><span class="nav-number">1.3.</span> <span class="nav-text">&amp; 按位与</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位取反"><span class="nav-number">1.4.</span> <span class="nav-text">~ 按位取反</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-gt-右移和-lt-lt-左移"><span class="nav-number">1.5.</span> <span class="nav-text">&gt;&gt;右移和&lt;&lt;左移</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liadbiz</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz',
+        appKey: '33lGH9xlJ9OHVOFzlKcneMml',
+        placeholder: '聊五毛钱的天儿呗',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("r2i9FpladIlqeJrWOXCg3zxj-gzGzoHsz", "33lGH9xlJ9OHVOFzlKcneMml");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
