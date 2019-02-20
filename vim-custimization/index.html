@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://liadbiz.github.io/images/tern.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/eslint.png">
 <meta property="og:image" content="http://liadbiz.github.io/images/ale.gif">
-<meta property="og:updated_time" content="2018-06-05T06:44:34.778Z">
+<meta property="og:updated_time" content="2019-02-20T09:19:54.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你看的懂的vim定制指南">
 <meta name="twitter:description" content="如何一步步把vim配置成可以用于多语言开发的ide以及设置好用的快捷键。">
@@ -509,6 +509,18 @@
 <p>添加了一个<code>Valloric/ListToggle</code>插件，作用是toggle<code>quickfix window</code>或者<code>location list</code>，因为装了语法检查的插件，但是有时候并不想看到错误列表，因此安装了这个插件来随时隐藏或者调出错误列表。</p>
 <p>添加了<code>airblade/vim-gitgutter</code>插件，作用是显示git状态，这个可以说是比较有用了，我经常会忘了我改了什么东西。</p>
 <p>添加了<code>jiangmiao/auto-pair</code>插件，作用是自动闭合括号，在写代码的时候，不管是什么语言，括号都是成对出现的，所以自动闭合括号可以说是很贴心了。</p>
+<h4 id="添加了几个插件。-2019-2-20"><a href="#添加了几个插件。-2019-2-20" class="headerlink" title="添加了几个插件。 2019-2-20"></a>添加了几个插件。 2019-2-20</h4><p>无意间看到一个视频，讲到几个实用的插件。</p>
+<p>分别是：</p>
+<ul>
+<li><code>tpope/vim-repeat</code> </li>
+<li><code>vim-scripts/ReplaceWithRegister</code></li>
+<li><code>christoomey/vim-titlecase</code></li>
+<li><code>kana/vim-textobj-user</code></li>
+<li><code>kana/vim-textobj-indent</code></li>
+<li><code>kana/vim-textobj-entire</code></li>
+<li><code>kana/vim-textobj-line</code></li>
+</ul>
+<p>具体作用大家可以去github上相应的项目主页上去看。</p>
 
       
     </div>
@@ -730,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装和配置"><span class="nav-number">2.</span> <span class="nav-text">插件安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrlp"><span class="nav-number">2.1.</span> <span class="nav-text">Ctrlp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightline"><span class="nav-number">2.2.</span> <span class="nav-text">lightline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-colorschemas"><span class="nav-number">2.3.</span> <span class="nav-text">vim-colorschemas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undotree"><span class="nav-number">2.4.</span> <span class="nav-text">undotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ag-vim"><span class="nav-number">2.5.</span> <span class="nav-text">ag.vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdtree"><span class="nav-number">2.6.</span> <span class="nav-text">Nerdtree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdcommenter"><span class="nav-number">2.7.</span> <span class="nav-text">Nerdcommenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python补全和错误检查"><span class="nav-number">2.8.</span> <span class="nav-text">python补全和错误检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript补全和语法检查"><span class="nav-number">2.9.</span> <span class="nav-text">Javascript补全和语法检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新日志"><span class="nav-number">4.</span> <span class="nav-text">更新日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将syntastic替换为ale-2018-4-22"><span class="nav-number">4.1.</span> <span class="nav-text">将syntastic替换为ale. 2018-4-22</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将ctrlp换成LeaderF。-新添加了几个小插件。-2018-6-4"><span class="nav-number">4.2.</span> <span class="nav-text">将ctrlp换成LeaderF。 新添加了几个小插件。 2018-6-4</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装和配置"><span class="nav-number">2.</span> <span class="nav-text">插件安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrlp"><span class="nav-number">2.1.</span> <span class="nav-text">Ctrlp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightline"><span class="nav-number">2.2.</span> <span class="nav-text">lightline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-colorschemas"><span class="nav-number">2.3.</span> <span class="nav-text">vim-colorschemas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undotree"><span class="nav-number">2.4.</span> <span class="nav-text">undotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ag-vim"><span class="nav-number">2.5.</span> <span class="nav-text">ag.vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdtree"><span class="nav-number">2.6.</span> <span class="nav-text">Nerdtree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nerdcommenter"><span class="nav-number">2.7.</span> <span class="nav-text">Nerdcommenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python补全和错误检查"><span class="nav-number">2.8.</span> <span class="nav-text">python补全和错误检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript补全和语法检查"><span class="nav-number">2.9.</span> <span class="nav-text">Javascript补全和语法检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新日志"><span class="nav-number">4.</span> <span class="nav-text">更新日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将syntastic替换为ale-2018-4-22"><span class="nav-number">4.1.</span> <span class="nav-text">将syntastic替换为ale. 2018-4-22</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将ctrlp换成LeaderF。-新添加了几个小插件。-2018-6-4"><span class="nav-number">4.2.</span> <span class="nav-text">将ctrlp换成LeaderF。 新添加了几个小插件。 2018-6-4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加了几个插件。-2019-2-20"><span class="nav-number">4.3.</span> <span class="nav-text">添加了几个插件。 2019-2-20</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -755,7 +767,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
